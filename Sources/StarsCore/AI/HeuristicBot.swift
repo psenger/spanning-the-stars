@@ -39,7 +39,8 @@ public struct BotSettings: Sendable, Equatable {
     public static func level(_ level: BotLevel) -> BotSettings {
         if level == .navigator || level == .commander || level == .admiral {
             var weights = BotWeights()
-            weights.keepCostWeight = 1.2   // above 1 a Contract is kept only when most of its route is shared
+            // Commander and Admiral put a higher cost on the route work an offered Contract needs.
+            weights.keepCostWeight = level == .navigator ? 1.2 : 1.5
             if level != .navigator {
                 weights.block = 2.0   // tuned, see docs/ai-results.md
                 if level == .admiral {

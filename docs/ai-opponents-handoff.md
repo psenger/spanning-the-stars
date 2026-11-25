@@ -4,6 +4,8 @@ Written 2026-11-22, about 07:45 local time, at the point the work was halted. Th
 enough, on its own, for a person or an AI agent to pick the work up. It assumes no memory of the session
 that produced it.
 
+The 2026-11-26 follow-up closed Commander's two-player gap by raising the cost of unfinished route length when Commander and Admiral select Contracts. Commander won 64.0% on the standard 2,000-game run and 64.25% over a separate 2,000 games. Its four-player lead also grew with hazards both on and off. See [the follow-up results](ai-results.md#contract-selection-tuning-2026-11-26). The dated history below describes the original handoff.
+
 ## 1. What was asked
 
 The owner asked for five difficulty levels of computer opponent, with no LLM, in Spanning the Stars, a
@@ -192,9 +194,9 @@ Admiral speed in release: mean 0.25 s and maximum 0.63 s per decision in a two-p
 | Responsive | holds by test | `BotSessionTests.mainActorStaysFreeWhileABotThinks`, which fails if the decision is moved onto the main actor |
 | Process | holds | milestone tags in commit subjects; TDD evidence in the task reports (local ledger folder) |
 
-## 6. What is not done
+## 6. Verification checklist
 
-In priority order. Each item says what to do and how to know it is finished.
+The items follow the original handoff order, with the status updated after the Contract selection follow-up.
 
 1. **Nobody has played a game in the running app.** Bot seats are covered by `GameSession` unit tests and view
    helper tests only. Do: `swift run SpanningTheStars`, start a game with one human and one bot at each level in
@@ -202,27 +204,13 @@ In priority order. Each item says what to do and how to know it is finished.
    Codex and log work during bot turns, that the level shows in the status bar, and that the Final Review
    appears. Also save and reload mid-game on a bot's turn. Done when: a full game at each level completes with
    no freeze or visual fault, or the faults are filed.
-2. **Admiral was not re-measured after the Commander tune-up.** Admiral ranks its candidates with the Commander,
-   so `0fa4f20` changes Admiral too. The 2-player effect is expected to be small (Commander moved 0.3 points at
-   2 players) but is unverified. Do: `swift run -c release Tournament --a 5 --b 4 --games 400 --players 2 --seed 42`
-   (about 25 minutes) and record it under M7 in `docs/ai-results.md`. Done when: at least 60%, or the gap is logged.
-3. **The M8 tables in `docs/ai-results.md` predate the tune-up.** Do: re-run the four commands listed under
-   "Final ladder" and "4-player mixed levels" there, replace the tables, and rewrite the two commentary
-   paragraphs. Then update Decisions rows D27 and D28 in the plan with the new numbers.
+2. **Admiral re-measured.** Admiral won 81.0% of 400 two-player games against the tuned Commander. M7 in `docs/ai-results.md` records the command and full report.
+3. **Final tables refreshed.** M8 records all four ladder matchups, the short ladder, and all three four-player mixes. D27 and D28 link to the follow-up decision in D33.
 4. **The whole-branch review never ran.** Every task was reviewed alone, except Task 14, which was not
    reviewed at all. Do: a fresh review of `git diff e51e34f..main` (e51e34f is `main` before this work), leaving
    out the README commit `b1dcff3`, with the deferred minor findings in section 7 as input; then one fix wave.
-5. **Commander misses its 2-player target (D27):** 57.6% against 60%, and under the ladder floor of 57.8%, so
-   `scripts/ladder.sh` and `Tournament --ladder` exit 1 on that rung. Twelve tuning rounds across two tasks
-   moved it 0.3 points. What was learned: the blocking, close-out and hold-back weights have almost no
-   leverage at 2 players; a larger Great Span weight makes it worse. The hold-back rule rarely fires because
-   it compares the seat's projected total, which includes its own Contracts, with rivals' public scores,
-   which exclude theirs. Options: (a) estimate rivals' hidden Contract points with `OpponentModel` before
-   comparing; (b) give Commander a one-move lookahead on contested lanes; (c) lower the target to 55% and
-   record that. Until one is done the CI workflow would fail.
-6. **CI is unverified.** `.github/workflows/ci.yml` was written without a remote to run it on. It runs
-   `swift test` and `scripts/ladder.sh` on `macos-26`. It will fail on the Commander rung (item 5), and it runs
-   twice per push when a pull request is open.
+5. **Commander meets its two-player target (D33).** The follow-up raised `keepCostWeight` from 1.2 to 1.5 for Commander and Admiral. An endgame estimate of rivals' Contract points was also tested and gave 57.6%, so the follow-up retained the existing endgame rule.
+6. **Hosted CI needs verification on the tuned code.** `.github/workflows/ci.yml` runs `swift test` and `scripts/ladder.sh` on `macos-26`. It runs for both push and pull request events.
 7. **Debug suite time:** 163 seconds measured, against a goal of 150. The slowest tests are the 1,000-game
    legality test in `HeadlessGameTests` and the per-level `neverPicksAnIllegalAction` tests.
 8. **Bot decision is not cancelled when a game is loaded or closed mid-move.** The stale result is dropped

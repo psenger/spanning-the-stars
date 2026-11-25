@@ -84,9 +84,23 @@ private func score(_ action: Action, _ bot: HeuristicBot, _ view: PlayerView) ->
         #expect(s.mistakeRate > 0 && s.mistakeRate < n.mistakeRate)
         let w = BotWeights()
         #expect(w.block == 0.6 && w.span == 0.5 && w.spanReach == 6 && w.closeOut == 5 && w.closeOutLead == 10)
-        #expect(s.weights.block == 2.0 && s.weights.keepCostWeight == 1.2)   // tuned, see docs/ai-results.md
+        #expect(s.weights.block == 2.0 && s.weights.keepCostWeight == 1.5)   // tuned, see docs/ai-results.md
         #expect(s.weights.blockCrowdScale == 0 && s.weights.holdBackMargin == 8)   // tuned
         #expect(BotRoster(engine: GameEngine(map: map)).bot(.commander) is HeuristicBot)
+    }
+
+    @Test func prefersTheShorterStartingContractWhenTheLongerRouteCostsTooMuch() {
+        let pairs = [("A", "B"), ("A", "D"), ("A", "E"), ("B", "E")]
+        let setupMap = GalaxyMap(systems: spanMap.systems, lanes: spanMap.lanes,
+                                 contractPairs: (pairs + pairs).map { (a: $0.0, b: $0.1, flavor: "t") })
+        var s = playing(on: setupMap, cards: [:])
+        s.phase = .setupContracts(offered: [0, 1, 2, 3])
+        let v = view(s, on: setupMap)
+
+        // Both keep A-B. Navigator favors the 22-point Contract with a route length of 20.
+        // Commander chooses the 15-point Contract with a route length of 15.
+        #expect(bot(.navigator, on: setupMap).scoredActions(view: v).first?.action == .keepContracts([0, 2]))
+        #expect(bot(.commander, on: setupMap).scoredActions(view: v).first?.action == .keepContracts([0, 1]))
     }
 
     @Test func blocksARivalsCriticalLaneWhenItCostsLittle() {

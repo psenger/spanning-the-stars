@@ -173,6 +173,37 @@ Commander     1000     47.8%  44.7% - 50.9%        75.2       2.20    0.94
 avg turns 157.1, illegal moves 0
 ```
 
+### Contract selection tuning (2026-11-26)
+
+The baseline reproduced 57.6% at two Houses. At four Houses Commander led Navigator 47.8% to 39.9% with hazards off and 47.1% to 41.0% with hazards on.
+
+For two Houses, one candidate estimated the rival's net Contract points from its public lanes and Contract count and included its Great Span when projecting the final round. A constructed position confirmed that the estimate changed the close-out decision as intended. The 2,000-game win rate still rounded to 57.6%, so the estimate was dropped.
+
+The first weight screen ran 1,000 two-House games per variant from seed 42, hazards off, using the estimate and changing one setting at a time. The weight values below are the ones tried.
+
+| Setting | Values tried | Commander win rate |
+| --- | --- | --- |
+| Estimate only | Current weights | 56.15% |
+| `keepCostWeight` | 1.05, 1.35, 1.50 | 43.10%, 61.15%, 64.25% |
+| `endgameBeacons` | 2, 5 | 61.00%, 58.70% |
+| `planProgress` | 2.0, 0.9 | 56.55%, 55.95% |
+| `endgamePointsBoost` | 1.0, 2.0 | 56.05%, 56.15% |
+| `urgency` | 1.0, 2.0 | 56.45%, 56.55% |
+| `offPlanPenalty` | 1.0 | 27.60% |
+| `cardNeed` | 5.0 | 62.70% |
+| `contractBeaconFloor` | 22 | 60.65% |
+
+The second screen used the original endgame and 2,000 two-House games per variant from seed 42. Commander won 61.475% at `keepCostWeight` 1.35, 63.975% at 1.50, and 65.275% at 1.65. The difference between 1.50 and 1.65 was small relative to the uncertainty in this run. We kept 1.50 because it also cleared the target on a separate set of seeds and improved both four-House formats. Commander and Admiral now subtract 1.5 points per unit of remaining route length when deciding which offered Contracts to keep. Navigator still subtracts 1.2.
+
+| Match | Games | Seed | Before | With 1.50 |
+| --- | ---: | ---: | ---: | ---: |
+| Commander vs Navigator | 2,000 | 42 | 57.575% | 63.975% |
+| Commander vs Navigator | 2,000 | 100042 | 56.225% | 64.250% |
+| Cadet, Pilot, Navigator, Commander | 1,000 | 42 | 47.8% vs 39.9% | 51.3% vs 37.1% |
+| Cadet, Pilot, Navigator, Commander, hazards on | 1,000 | 42 | 47.1% vs 41.0% | 51.85% vs 38.55% |
+
+At the standard two-House seed, Commander's average completed Contracts rose from 1.923 to 2.057, and average failed Contracts fell from 0.989 to 0.856. Every screen and validation run reported zero illegal moves. Reproduce the final configuration with `Tournament --a 4 --b 3 --players 2 --games 2000 --seed 42`, then repeat with `--seed 100042`. The four-House commands are in M8.
+
 ## M7: Level 5 Admiral
 
 Admiral settings: the Commander's planner, scorer, opponent model and weights, temperature 0, mistake rate 0,
@@ -207,30 +238,49 @@ Admiral        400     82.5%  78.5% - 85.9%        86.7       1.42    0.61
 avg turns 72.2, illegal moves 0
 ```
 
+### After Contract selection tuning
+
+```text
+$ swift run -c release Tournament --a 5 --b 4 --games 400 --players 2 --seed 42
+400 games, 2 players, seed 42, hazards off
+seats: Admiral, Commander
+level      samples  win rate  95% CI          avg score  completed  failed
+Commander      400     19.0%  15.5% - 23.1%        65.6       2.06    0.97
+Admiral        400     81.0%  76.9% - 84.5%        87.2       1.47    0.57
+avg turns 72.2, illegal moves 0
+```
+
+Admiral won 81.0% against the tuned Commander and cleared the 60% target. The original 82.5% above was measured before the Commander tune-ups.
+
 ## M8: Ladder and crowded boards
 
-All runs below use the release binary built at commit f555a2b (M7), seed 42.
-
-**These tables predate the Commander tune-up (commit 0fa4f20, described under M6).** After it, Commander wins
-57.6% against Navigator at two players and 47.8% against 39.9% at four. The ladder and 4-player tables
-below, and Admiral vs Commander under M7, have not been re-run since. See `docs/ai-opponents-handoff.md`,
-section 6.
+The follow-up runs use the release build with `keepCostWeight` 1.5 for Commander and Admiral and seed 42. M6 records the Commander baseline and the independent validation at seed 100042.
 
 ### Final ladder
 
+Each matchup ran separately with the same seat order, seeds, and game counts as `Tournament --ladder --games 2000 --seed 42`. Individual reports also count illegal moves.
+
+| Matchup | Games | Higher level wins | 95% interval | Target | Ladder floor |
+| --- | ---: | ---: | --- | ---: | ---: |
+| Pilot vs Cadet | 2,000 | 82.8% | 81.0% to 84.3% | 75% | 73.1% |
+| Navigator vs Pilot | 2,000 | 80.0% | 78.2% to 81.7% | 65% | 62.9% |
+| Commander vs Navigator | 2,000 | 64.0% | 61.8% to 66.1% | 60% | 57.8% |
+| Admiral vs Commander | 400 | 81.0% | 76.9% to 84.5% | 60% | 55.1% |
+
+All four matchups cleared their targets and reported zero illegal moves. Commander also won 64.25% in a separate 2,000-game run.
+
+### Short ladder
+
 ```text
-$ Tournament --ladder --games 2000 --seed 42
-Pilot vs Cadet          2000 games  win rate  82.8%  target 75%  floor  73.1%  pass
-Navigator vs Pilot      2000 games  win rate  80.0%  target 65%  floor  62.9%  pass
-Commander vs Navigator  2000 games  win rate  57.3%  target 60%  floor  57.8%  FAIL
-Admiral vs Commander     400 games  win rate  82.5%  target 60%  floor  55.1%  pass
-exit 1
+$ Tournament --ladder --games 200 --seed 42
+Pilot vs Cadet           200 games  win rate  78.0%  target 75%  floor  68.9%  pass
+Navigator vs Pilot       200 games  win rate  77.5%  target 65%  floor  58.3%  pass
+Commander vs Navigator   200 games  win rate  64.5%  target 60%  floor  53.1%  pass
+Admiral vs Commander      40 games  win rate  82.5%  target 60%  floor  44.5%  pass
+exit 0
 ```
 
-Three of four rungs pass. Commander vs Navigator misses its 60% target and falls 0.5 points under the
-two-standard-error floor. Its interval (55.1% to 59.5%) is wholly above 50%, so Commander is stronger than
-Navigator at two players, by less than planned. Six tuning rounds on the weights the plan names did not
-move it; see the M6 section and the plan's Decisions log (D27).
+This is the command used by `scripts/ladder.sh`. The full Swift test suite also passed with 248 core tests and 36 app tests.
 
 ### 4-player mixed levels
 
@@ -239,11 +289,11 @@ $ Tournament --levels 1,2,3,4 --games 1000 --seed 42
 1000 games, 4 players, seed 42, hazards off
 seats: Cadet, Pilot, Navigator, Commander
 level      samples  win rate  95% CI          avg score  completed  failed
-Cadet         1000      0.0%  0.0% - 0.4%           8.4       0.16    3.41
-Pilot         1000     11.9%  10.0% - 14.1%        37.4       1.50    2.66
-Navigator     1000     46.1%  43.0% - 49.2%        73.5       2.23    0.93
-Commander     1000     42.0%  39.0% - 45.1%        72.4       2.10    0.95
-avg turns 157.0, illegal moves 0
+Cadet         1000      0.0%  0.0% - 0.4%           7.7       0.16    3.44
+Pilot         1000     11.6%  9.8% - 13.7%         40.2       1.62    2.49
+Navigator     1000     37.1%  34.2% - 40.1%        73.6       2.31    0.90
+Commander     1000     51.3%  48.2% - 54.4%        79.2       2.36    0.83
+avg turns 156.5, illegal moves 0
 ```
 
 ```text
@@ -251,10 +301,10 @@ $ Tournament --levels 1,2,3,4 --games 1000 --seed 42 --hazards
 1000 games, 4 players, seed 42, hazards on
 seats: Cadet, Pilot, Navigator, Commander
 level      samples  win rate  95% CI          avg score  completed  failed
-Cadet         1000      0.5%  0.2% - 1.2%          10.6       0.18    3.36
-Pilot         1000     11.1%  9.3% - 13.1%         30.2       1.39    2.73
-Navigator     1000     45.6%  42.5% - 48.7%        66.9       2.11    0.97
-Commander     1000     42.9%  39.8% - 45.9%        65.0       1.99    1.02
+Cadet         1000      0.3%  0.1% - 0.9%          11.7       0.20    3.28
+Pilot         1000      9.3%  7.7% - 11.3%         31.1       1.48    2.66
+Navigator     1000     38.6%  35.6% - 41.6%        66.3       2.13    0.99
+Commander     1000     51.8%  48.8% - 54.9%        71.8       2.20    0.91
 avg turns 145.5, illegal moves 0
 ```
 
@@ -263,15 +313,11 @@ $ Tournament --levels 2,3,4,5 --games 100 --seed 42
 100 games, 4 players, seed 42, hazards off
 seats: Pilot, Navigator, Commander, Admiral
 level      samples  win rate  95% CI          avg score  completed  failed
-Pilot          100      1.0%  0.2% - 5.4%          17.9       1.18    3.10
-Navigator      100     19.0%  12.5% - 27.8%        64.0       2.24    1.09
-Commander      100     21.5%  14.6% - 30.5%        64.1       2.22    1.07
-Admiral        100     58.5%  48.7% - 67.7%        80.2       1.34    0.76
-avg turns 144.5, illegal moves 0
+Pilot          100      3.0%  1.0% - 8.5%          20.8       1.26    2.96
+Navigator      100     16.0%  10.1% - 24.4%        66.2       2.44    0.99
+Commander      100     25.5%  18.0% - 34.8%        70.0       2.44    0.88
+Admiral        100     55.5%  45.7% - 64.9%        86.2       1.49    0.63
+avg turns 145.2, illegal moves 0
 ```
 
-No illegal moves in 2,100 four-player games. Cadet, Pilot, Navigator and Admiral order as expected.
-Commander does not: with four Houses it wins no more often than Navigator (42.0% against 46.1%, and 42.9%
-against 45.6% with hazards; 21.5% against 19.0% beside an Admiral, inside the noise of 100 games). Its
-blocking weight was tuned on two-player games only, and on a crowded board a turn spent denying one rival
-helps the others. See D28.
+Commander leads Navigator in the 1,000-game runs with and without Frontier Hazards. Admiral leads the 100-game mixed run, where Commander finishes second by win rate. All 2,100 four-House games reported zero illegal moves.
