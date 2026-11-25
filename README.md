@@ -12,7 +12,7 @@
 
 ---
 
-Spanning the Stars is a native macOS board game for 2 to 5 players sharing one Mac. Rival shipping houses race to connect star systems on a galaxy map with an optional Frontier Hazards variant. It is written in Swift and SwiftUI with no external dependencies. All players are human; there are no computer opponents.
+Spanning the Stars is a native macOS board game for 2 to 5 players sharing one Mac. Rival shipping houses race to connect star systems on a galaxy map with an optional Frontier Hazards variant. Each House can be played by a human or by an offline AI at one of five difficulty levels. It is written in Swift and SwiftUI with no external dependencies.
 
 ![A two-house game in progress, showing the star map, the Exchange, the log and the current hand](docs/images/screenshot.png)
 
@@ -50,7 +50,7 @@ You lead one of those houses.
 
 ## Quick start
 
-Requires macOS 26 and a Swift 6.2 or newer toolchain (Xcode or the command line tools).
+The game requires macOS 26 or later. Download the Apple silicon build from [GitHub Releases](https://github.com/psenger/spanning-the-stars/releases). To build from source, install Swift 6.2 or later through Xcode or the command line tools.
 
 ```bash
 swift run SpanningTheStars
@@ -91,10 +91,11 @@ An optional toggle at setup that changes two regions of the map. It is original 
 swift test
 ```
 
-The package has two targets:
+The package includes:
 
 - `StarsCore`: the rules engine, map, scoring and saves. Pure Swift with no SwiftUI import, and deterministic under a seeded random number generator.
 - `SpanningTheStars`: the SwiftUI app, the SVG art, and the bundled copy of the rules.
+- `Tournament`: the command-line runner for seeded bot matches and the difficulty ladder.
 
 `Package.swift` opens directly in Xcode. The art is hand-authored SVG in `Sources/SpanningTheStars/Resources/Art`. After changing `Sources/SpanningTheStars/Resources/AppIcon.svg`, refresh the icon at the top of this page with:
 
@@ -110,6 +111,6 @@ Design notes are in the [design document](docs/superpowers/specs/2026-11-20-span
 
 **The Concord is watching. Start spanning the stars.**
 
-[Rules](docs/RULES.md) • [Design document](docs/superpowers/specs/2026-11-20-spanning-the-stars-design.md)
+[Rules](docs/RULES.md) • [Design document](docs/superpowers/specs/2026-11-20-spanning-the-stars-design.md) • [Changelog](CHANGELOG.md)
 
 </div>
