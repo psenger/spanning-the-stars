@@ -90,17 +90,19 @@ import Testing
 
     @Test func resumingOnABotTurnStartsTheBot() async throws {
         let store = InMemoryGameStore()
-        let first = GameSession(config: config([.human, .bot(.cadet)]), store: store, botDelay: .seconds(60))
-        keepFirstTwo(first)
-        let saved = try #require(try store.load())
-        #expect(isBot(saved))
+        let engine = GameEngine(map: .standard)
+        var saved = engine.newGame(config([.human, .bot(.cadet)]))
+        let keep = try #require(engine.legalActions(saved).first)
+        _ = try engine.apply(keep, to: &saved)
+        try store.save(saved)
 
         let resumed = try #require(GameSession.resume(store: store, saves: InMemorySaveSlots(), botDelay: .zero))
+        #expect(resumed.state == saved)
         #expect(resumed.screen == .botTurn(player: 1))
         await resumed.waitForBots()
         #expect(resumed.state.log.count > saved.log.count)
-        #expect(resumed.state.phase == .gameOver || !isBot(resumed.state))
-        #expect(first.state == saved)   // the first session's bot is still waiting out its delay
+        #expect(!isBot(resumed.state))
+        #expect(try store.load() == resumed.state)
     }
 
     @Test func loadingABotTurnStartsTheBot() async throws {
