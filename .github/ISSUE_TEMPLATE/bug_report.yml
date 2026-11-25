@@ -1,0 +1,89 @@
+name: Bug report
+description: Something in the game, the app, or the build behaves incorrectly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Exact steps and a log from around the moment it went wrong help us reproduce the bug.
+
+        For questions about a rule, check the Concord Codex in the app or in `docs/RULES.md`.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did the game or tool do?
+      placeholder: After I anchored a lane in a High-Traffic Corridor, the other lane was still open in a three-House game.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      placeholder: With three Houses, anchoring either of the twin lanes should close the other one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Start from a new Charter if you can. Name the Houses involved.
+      placeholder: |
+        1. Start a three-House game with human seats and Frontier Hazards off.
+        2. Anchor either lane in a High-Traffic Corridor.
+        3. On the next House's turn, check whether the other lane is available.
+    validations:
+      required: true
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: Game setup
+      description: Include the Houses, bot levels, Frontier Hazards setting, and the turn or screen where it happened.
+      placeholder: Three Houses. Meridian was a Navigator bot. Frontier Hazards was off. It happened during Varn's turn.
+
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where it happened
+      multiple: true
+      options:
+        - macOS app
+        - Swift tests or command line
+        - Xcode build
+        - App bundling
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: macOS and toolchain versions
+      placeholder: macOS 26.0, Swift 6.2
+
+  - type: input
+    id: build
+    attributes:
+      label: Build
+      description: The commit hash or branch you were running.
+      placeholder: main at 9109aa7
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Game log, screenshot, or recording
+      description: >-
+        Paste relevant lines from the in-game log in a code block or attach a screenshot.
+        To capture a replay, enable Diagnostic logging in Settings before starting, loading, or continuing a game.
+        Use Show logs in Finder to locate the file and review it before sharing.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send it
+      options:
+        - label: I searched the open issues for duplicates.
+        - label: For a rule bug, I checked the Concord Codex.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<!-- Resource icon: Solar Sails -->
+<defs><linearGradient id="sl" gradientUnits="userSpaceOnUse" x1="58" y1="6" x2="20" y2="34"><stop offset="0" stop-color="#FFF6C2"/><stop offset="0.45" stop-color="#F7D23E"/><stop offset="1" stop-color="#C9930E"/></linearGradient></defs>
+<path d="M24 3Q42.5 6 61 11Q61.5 26 57 39Q38 39 19 29Q19.5 15.5 24 3Z" fill="url(#sl)" stroke="#8A6208" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M36.5 6Q38 22 33 34M49 8.5Q52 24 46 37" fill="none" stroke="#9A6E08" stroke-width="1" stroke-opacity="0.6"/>
+<path d="M24 3Q42.5 6 61 11" fill="none" stroke="#FFFDF0" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M23.41 44.86L24 3M23.41 44.86L61 11M23.41 44.86L57 39M23.41 44.86L19 29" stroke="#E8DCA8" stroke-width="1" stroke-opacity="0.9" stroke-linecap="round"/>
+<g transform="translate(15.5 51.5) rotate(-40)"><path d="M-7.25 -3.7L-15.17 -7.48L-15.17 7.48L-7.25 3.7Z" fill="#4A5062"/><rect x="-7.25" y="-4.4" width="14.5" height="8.8" rx="2.2" fill="#D2D8E4"/><path d="M7.25 -4.4Q11.65 0 7.25 4.4Z" fill="#D2D8E4"/><ellipse cx="-1.45" cy="0" rx="2.46" ry="8.36" fill="none" stroke="#C9A55A" stroke-width="2.29"/></g>
+</svg>

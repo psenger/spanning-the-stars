@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+<!-- Concord Contract face: frame only; names, flavor and value are drawn by the app -->
+<defs>
+<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121B40"/><stop offset="1" stop-color="#0A0F26"/></linearGradient>
+<linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<clipPath id="chart"><rect x="14" y="120" width="172" height="130"/></clipPath>
+</defs>
+<rect x="0" y="0" width="200" height="300" rx="14" fill="#0B1026"/>
+<rect x="6" y="6" width="188" height="288" rx="9" fill="url(#body)"/>
+<!-- Star-chart watermark (low contrast, sits under the flavor text) -->
+<g clip-path="url(#chart)">
+<circle cx="100" cy="185" r="58" fill="none" stroke="#C9A55A" stroke-width="0.6" stroke-opacity="0.1"/>
+<circle cx="100" cy="185" r="38" fill="none" stroke="#C9A55A" stroke-width="0.5" stroke-opacity="0.08"/>
+<circle cx="100" cy="185" r="78" fill="none" stroke="#C9A55A" stroke-width="0.5" stroke-opacity="0.08" stroke-dasharray="2 3"/>
+<path d="M100 115V255M30 185H170" stroke="#C9A55A" stroke-width="0.5" stroke-opacity="0.07"/>
+<polyline points="40,150 62,140 84,158 104,146 126,170 150,160 164,190" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.12"/>
+<polyline points="52,220 76,206 98,226 122,212" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.12"/>
+<circle cx="40" cy="150" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="62" cy="140" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="84" cy="158" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="104" cy="146" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="126" cy="170" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="150" cy="160" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="164" cy="190" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="52" cy="220" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="76" cy="206" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="98" cy="226" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="122" cy="212" r="1.6" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="122.87" cy="127.05" r="0.59" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="138.78" cy="206.56" r="1.02" fill="#F1D58A" fill-opacity="0.09"/>
+<circle cx="87.2" cy="127.64" r="0.55" fill="#F1D58A" fill-opacity="0.14"/>
+<circle cx="22.35" cy="148.26" r="0.85" fill="#F1D58A" fill-opacity="0.15"/>
+<circle cx="54.15" cy="195.89" r="0.97" fill="#F1D58A" fill-opacity="0.08"/>
+<circle cx="150.15" cy="209.17" r="0.64" fill="#F1D58A" fill-opacity="0.1"/>
+<circle cx="174.98" cy="165.06" r="0.46" fill="#F1D58A" fill-opacity="0.09"/>
+<circle cx="156.99" cy="197.65" r="0.96" fill="#F1D58A" fill-opacity="0.17"/>
+<circle cx="105.94" cy="242.72" r="0.66" fill="#F1D58A" fill-opacity="0.15"/>
+<circle cx="154.02" cy="199.46" r="1" fill="#F1D58A" fill-opacity="0.15"/>
+<circle cx="133.55" cy="129.59" r="0.56" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="31.09" cy="152.4" r="0.47" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="122.25" cy="168.51" r="0.66" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="61.78" cy="238.27" r="0.85" fill="#F1D58A" fill-opacity="0.15"/>
+<circle cx="46.07" cy="212.95" r="0.51" fill="#F1D58A" fill-opacity="0.13"/>
+<circle cx="180.28" cy="202.08" r="0.79" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="156.23" cy="218.67" r="0.56" fill="#F1D58A" fill-opacity="0.08"/>
+<circle cx="69.73" cy="156.66" r="0.55" fill="#F1D58A" fill-opacity="0.19"/>
+<circle cx="161.72" cy="162.39" r="0.86" fill="#F1D58A" fill-opacity="0.13"/>
+<circle cx="167.99" cy="179.98" r="0.59" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="110.06" cy="156.05" r="0.81" fill="#F1D58A" fill-opacity="0.19"/>
+<circle cx="83.5" cy="150.76" r="1.1" fill="#F1D58A" fill-opacity="0.14"/>
+<circle cx="32.91" cy="129.75" r="0.48" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="147.9" cy="175.5" r="0.44" fill="#F1D58A" fill-opacity="0.13"/>
+<circle cx="181.36" cy="188.55" r="1.08" fill="#F1D58A" fill-opacity="0.18"/>
+<circle cx="19.88" cy="211.93" r="0.88" fill="#F1D58A" fill-opacity="0.14"/>
+<circle cx="61.76" cy="202.2" r="0.48" fill="#F1D58A" fill-opacity="0.13"/>
+<circle cx="92.41" cy="240.37" r="1.01" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="100.1" cy="145.8" r="1.04" fill="#F1D58A" fill-opacity="0.18"/>
+<circle cx="66.94" cy="201.95" r="0.83" fill="#F1D58A" fill-opacity="0.1"/>
+<circle cx="143.05" cy="189.8" r="0.95" fill="#F1D58A" fill-opacity="0.14"/>
+<circle cx="18.09" cy="163.55" r="0.41" fill="#F1D58A" fill-opacity="0.19"/>
+<circle cx="162.11" cy="225.46" r="0.62" fill="#F1D58A" fill-opacity="0.09"/>
+<circle cx="161.99" cy="239.53" r="0.46" fill="#F1D58A" fill-opacity="0.14"/>
+<circle cx="29.35" cy="216.79" r="0.94" fill="#F1D58A" fill-opacity="0.1"/>
+<circle cx="95.95" cy="191.08" r="0.59" fill="#F1D58A" fill-opacity="0.18"/>
+<circle cx="87.39" cy="149.84" r="0.78" fill="#F1D58A" fill-opacity="0.17"/>
+<circle cx="50.99" cy="162.03" r="1.1" fill="#F1D58A" fill-opacity="0.16"/>
+<circle cx="89.85" cy="187.14" r="0.48" fill="#F1D58A" fill-opacity="0.11"/>
+<circle cx="73.45" cy="195.77" r="0.56" fill="#F1D58A" fill-opacity="0.11"/>
+</g>
+<!-- Zone dividers -->
+<path d="M22 114H92M108 114H178" stroke="#C9A55A" stroke-width="0.8" stroke-opacity="0.8"/>
+<polygon points="100,110.5 103.5,114 100,117.5 96.5,114" fill="#F1D58A"/>
+<path d="M22 254H92M108 254H178" stroke="#C9A55A" stroke-width="0.8" stroke-opacity="0.8"/>
+<polygon points="100,250.5 103.5,254 100,257.5 96.5,254" fill="#F1D58A"/>
+<!-- Footer: small Concord star between laurel strokes -->
+<path d="M70 272Q84 264 92 272M130 272Q116 264 108 272" fill="none" stroke="#C9A55A" stroke-width="0.9"/>
+<polygon points="100,265 100.96,269.67 104.95,267.05 102.33,271.04 107,272 102.33,272.96 104.95,276.95 100.96,274.33 100,279 99.04,274.33 95.05,276.95 97.67,272.96 93,272 97.67,271.04 95.05,267.05 99.04,269.67" fill="url(#brass)" stroke="#8A6A2E" stroke-width="0.6" stroke-linejoin="round"/>
+<polygon points="103.07,268.93 101.4,272 103.07,275.07 100,273.4 96.93,275.07 98.6,272 96.93,268.93 100,270.6" fill="#F1D58A" fill-opacity="0.9"/>
+<!-- Value badge ring (left empty for the value) -->
+<circle cx="166" cy="36" r="24" fill="#05070F" fill-opacity="0.6" stroke="url(#brass)" stroke-width="2"/>
+<circle cx="166" cy="36" r="20.5" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.5"/>
+<!-- Concord brass hairlines and corner ornaments -->
+<path d="M162.71 9H16A7 7 0 0 0 9 16V284A7 7 0 0 0 16 291H184A7 7 0 0 0 191 284V46.72A27.2 27.2 0 1 1 162.71 9Z" fill="none" stroke="#C9A55A" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148.17 12.5H17.5A5 5 0 0 0 12.5 17.5V282.5A5 5 0 0 0 17.5 287.5H182.5A5 5 0 0 0 187.5 282.5V56.2A29.5 29.5 0 1 1 148.17 12.5Z" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.35"/>
+<circle cx="162.71" cy="9" r="1.3" fill="#F1D58A"/><circle cx="191" cy="46.72" r="1.3" fill="#F1D58A"/>
+<g transform="translate(9 9)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(9 291) scale(1 -1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(191 291) scale(-1 -1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<polygon points="100,5.5 103.5,9 100,12.5 96.5,9" fill="#F1D58A"/>
+<polygon points="100,287.5 103.5,291 100,294.5 96.5,291" fill="#F1D58A"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<!-- Resource icon: Bio-Gel -->
+<defs><radialGradient id="gc" cx="0.4" cy="0.38" r="0.62"><stop offset="0" stop-color="#C2FFD9"/><stop offset="0.55" stop-color="#2FD08C"/><stop offset="1" stop-color="#1A9E68"/></radialGradient></defs>
+<circle cx="26" cy="36" r="19" fill="url(#gc)"/>
+<circle cx="45" cy="20" r="11.5" fill="url(#gc)"/>
+<circle cx="47" cy="44.5" r="9" fill="url(#gc)"/>
+<circle cx="25" cy="37" r="7.5" fill="#0D6447"/>
+<circle cx="23" cy="34.5" r="2.5" fill="#C2FFD9"/>
+<circle cx="45.5" cy="20.5" r="4" fill="#0D6447"/>
+<circle cx="47.5" cy="45" r="3" fill="#0D6447"/>
+<path d="M12 31A15 15 0 0 1 22 19.5" fill="none" stroke="#F0FFF6" stroke-width="2" stroke-linecap="round" stroke-opacity="0.8"/>
+</svg>

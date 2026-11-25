@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<!-- Resource icon: Plasma Fuel -->
+<defs><linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF9A6B"/><stop offset="0.45" stop-color="#E2303F"/><stop offset="1" stop-color="#A3162B"/></linearGradient></defs>
+<path d="M32 3C35 13 45 19 49 30C53 41 49 54 39 59C35 61 29 61 25 59C15 54 11 42 15 32C17 27 20 24 22 20C23 26 25 29 28 30C26 21 28 11 32 3Z" fill="url(#fl)"/>
+<path d="M33 24C36 32 43 37 42 47C41 54 37 57 32 57C27 57 23 53 23 47C23 42 26 40 28 36C29 40 31 41 32 41C31 36 31 30 33 24Z" fill="#FF9A6B"/>
+<path d="M32 41C34 45 37 47 36.5 51C36 54 34.5 55.5 32 55.5C29.5 55.5 27.5 54 27.5 51C27.5 48 31 46 32 41Z" fill="#FFE3B3"/>
+</svg>

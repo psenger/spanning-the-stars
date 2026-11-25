@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<!-- House crest: House Ashkar -->
+<defs>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<linearGradient id="rimIn" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<radialGradient id="field" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#F7D065"/><stop offset="0.6" stop-color="#D9A21E"/><stop offset="1" stop-color="#5A3E06"/></radialGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<clipPath id="fieldClip">
+<circle cx="64" cy="64" r="51"/></clipPath>
+<linearGradient id="dune1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A10"/><stop offset="1" stop-color="#3E2604"/></linearGradient>
+<linearGradient id="dune2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B87A18"/><stop offset="1" stop-color="#5A3A08"/></linearGradient>
+<linearGradient id="moon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFBEA"/><stop offset="1" stop-color="#F1D58A"/></linearGradient>
+<radialGradient id="glowFFF6DA" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF6DA"/><stop offset="0.55" stop-color="#FFF6DA" stop-opacity="0.55"/><stop offset="1" stop-color="#FFF6DA" stop-opacity="0"/></radialGradient>
+</defs>
+
+<circle cx="65.5" cy="66.5" r="61" fill="#000000" fill-opacity="0.35"/>
+<!-- Rim -->
+<circle cx="64" cy="64" r="61" fill="url(#rim)"/>
+<circle cx="64" cy="64" r="60.2" fill="none" stroke="#8A6A2E" stroke-width="0.8"/>
+<circle cx="64" cy="64" r="53" fill="url(#rimIn)"/>
+<circle cx="120.5" cy="64" r="1.1" fill="#8A6A2E"/>
+<circle cx="118.57" cy="78.62" r="1.1" fill="#8A6A2E"/>
+<circle cx="112.93" cy="92.25" r="1.1" fill="#8A6A2E"/>
+<circle cx="103.95" cy="103.95" r="1.1" fill="#8A6A2E"/>
+<circle cx="92.25" cy="112.93" r="1.1" fill="#8A6A2E"/>
+<circle cx="78.62" cy="118.57" r="1.1" fill="#8A6A2E"/>
+<circle cx="64" cy="120.5" r="1.1" fill="#8A6A2E"/>
+<circle cx="49.38" cy="118.57" r="1.1" fill="#8A6A2E"/>
+<circle cx="35.75" cy="112.93" r="1.1" fill="#8A6A2E"/>
+<circle cx="24.05" cy="103.95" r="1.1" fill="#8A6A2E"/>
+<circle cx="15.07" cy="92.25" r="1.1" fill="#8A6A2E"/>
+<circle cx="9.43" cy="78.62" r="1.1" fill="#8A6A2E"/>
+<circle cx="7.5" cy="64" r="1.1" fill="#8A6A2E"/>
+<circle cx="9.43" cy="49.38" r="1.1" fill="#8A6A2E"/>
+<circle cx="15.07" cy="35.75" r="1.1" fill="#8A6A2E"/>
+<circle cx="24.05" cy="24.05" r="1.1" fill="#8A6A2E"/>
+<circle cx="35.75" cy="15.07" r="1.1" fill="#8A6A2E"/>
+<circle cx="49.38" cy="9.43" r="1.1" fill="#8A6A2E"/>
+<circle cx="64" cy="7.5" r="1.1" fill="#8A6A2E"/>
+<circle cx="78.62" cy="9.43" r="1.1" fill="#8A6A2E"/>
+<circle cx="92.25" cy="15.07" r="1.1" fill="#8A6A2E"/>
+<circle cx="103.95" cy="24.05" r="1.1" fill="#8A6A2E"/>
+<circle cx="112.93" cy="35.75" r="1.1" fill="#8A6A2E"/>
+<circle cx="118.57" cy="49.38" r="1.1" fill="#8A6A2E"/>
+<!-- Field -->
+<circle cx="64" cy="64" r="51" fill="url(#field)"/>
+<g clip-path="url(#fieldClip)">
+<circle cx="64" cy="64" r="44" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.25"/>
+<circle cx="64" cy="44" r="30" fill="url(#glowFFF6DA)" fill-opacity="0.05"/>
+<circle cx="64" cy="44" r="24" fill="url(#glowFFF6DA)" fill-opacity="0.1"/>
+<circle cx="64" cy="44" r="18" fill="url(#glowFFF6DA)" fill-opacity="0.16"/>
+<circle cx="64" cy="44" r="12" fill="url(#glowFFF6DA)" fill-opacity="0.22"/>
+<circle cx="64" cy="44" r="6" fill="url(#glowFFF6DA)" fill-opacity="0.27"/>
+<path d="M34 35 Q34.54 37.46 37 38 Q34.54 38.54 34 41 Q33.46 38.54 31 38 Q33.46 37.46 34 35Z" fill="#FFF6DA" fill-opacity="0.9"/>
+<path d="M96 27.6 Q96.43 29.57 98.4 30 Q96.43 30.43 96 32.4 Q95.57 30.43 93.6 30 Q95.57 29.57 96 27.6Z" fill="#FFF6DA" fill-opacity="0.9"/>
+<path d="M106 56 Q106.36 57.64 108 58 Q106.36 58.36 106 60 Q105.64 58.36 104 58 Q105.64 57.64 106 56Z" fill="#FFF6DA" fill-opacity="0.9"/>
+<path d="M28 60.2 Q28.32 61.68 29.8 62 Q28.32 62.32 28 63.8 Q27.68 62.32 26.2 62 Q27.68 61.68 28 60.2Z" fill="#FFF6DA" fill-opacity="0.9"/>
+<!-- Crescent -->
+<path d="M62 22A22 22 0 1 0 82 54A17 17 0 1 1 62 22Z" fill="#7A5408" fill-opacity="0.35" transform="translate(1.5 2)"/>
+<path d="M62 22A22 22 0 1 0 82 54A17 17 0 1 1 62 22Z" fill="url(#moon)"/>
+<!-- Dune ridges -->
+<path d="M8 86Q30 70 52 78T96 74T124 80V124H8Z" fill="url(#dune2)"/>
+<path d="M8 86Q30 70 52 78T96 74T124 80" fill="none" stroke="#FFE6A0" stroke-width="1.4" stroke-opacity="0.8"/>
+<path d="M4 102Q36 86 70 96T124 92V124H4Z" fill="url(#dune1)"/>
+<path d="M4 102Q36 86 70 96T124 92" fill="none" stroke="#F1D58A" stroke-width="1.2" stroke-opacity="0.7"/>
+<path d="M30 112Q56 104 84 110" fill="none" stroke="#F1D58A" stroke-width="0.8" stroke-opacity="0.35"/>
+</g>
+<circle cx="64" cy="64" r="51" fill="none" stroke="#8A6A2E" stroke-width="1.2"/>
+<path d="M18 46A49 49 0 0 1 90 18" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-opacity="0.35"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<!-- Hazard glyph: Spectrum lane (faceted crystal splitting a beam into separated resource-hue bands) -->
+<defs>
+<linearGradient id="beam" gradientUnits="userSpaceOnUse" x1="8" y1="0" x2="13" y2="10"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.9"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+<radialGradient id="glow9FD4FF" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#9FD4FF"/><stop offset="0.55" stop-color="#9FD4FF" stop-opacity="0.55"/><stop offset="1" stop-color="#9FD4FF" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="15" cy="15" r="14" fill="url(#glow9FD4FF)" fill-opacity="0.05"/>
+<circle cx="15" cy="15" r="10.27" fill="url(#glow9FD4FF)" fill-opacity="0.13"/>
+<circle cx="15" cy="15" r="6.53" fill="url(#glow9FD4FF)" fill-opacity="0.22"/>
+<circle cx="15" cy="15" r="2.8" fill="url(#glow9FD4FF)" fill-opacity="0.3"/>
+<polygon points="7.6,0.5 9.8,0.5 14.6,9.2 12.4,10.2" fill="url(#beam)"/>
+<line x1="19.5" y1="13" x2="31" y2="14.62" stroke="#E2303F" stroke-width="2" stroke-linecap="round"/>
+<line x1="19.5" y1="15.2" x2="31" y2="19.39" stroke="#F7D23E" stroke-width="2" stroke-linecap="round"/>
+<line x1="19.5" y1="17.4" x2="31" y2="24.59" stroke="#2FD08C" stroke-width="2" stroke-linecap="round"/>
+<line x1="19.5" y1="19.6" x2="31" y2="30.71" stroke="#34A6F4" stroke-width="2" stroke-linecap="round"/>
+<!-- Crystal: hexagonal prism, left, front and right faces, cap facets -->
+<polygon points="14.5,4.5 20.5,8.5 20.5,20.5 14.5,25 8.5,20.5 8.5,8.5" fill="#7FA8E0"/>
+<polygon points="14.5,4.5 20.5,8.5 16.5,10 12.5,10" fill="#F2FAFF"/>
+<polygon points="8.5,8.5 14.5,4.5 12.5,10" fill="#C6E4FF"/>
+<polygon points="12.5,10 16.5,10 16.5,21.5 12.5,21.5" fill="#B4D8FA"/>
+<polygon points="16.5,10 20.5,8.5 20.5,20.5 16.5,21.5" fill="#6A92D0"/>
+<polygon points="8.5,8.5 12.5,10 12.5,21.5 8.5,20.5" fill="#9CC2F0"/>
+<polygon points="8.5,20.5 12.5,21.5 16.5,21.5 20.5,20.5 14.5,25" fill="#4A6AAE"/>
+<line x1="13.6" y1="11.6" x2="13.6" y2="19.5" stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="round" stroke-opacity="0.85"/>
+<polygon points="14.5,4.5 20.5,8.5 20.5,20.5 14.5,25 8.5,20.5 8.5,8.5" fill="none" stroke="#C9A55A" stroke-width="0.9" stroke-linejoin="round"/>
+</svg>

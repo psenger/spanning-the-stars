@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<!-- Hazard glyph: Gravity Well (funnel of tightening rings in a warped grid) -->
+<defs>
+<radialGradient id="glow8C6CFF" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#8C6CFF"/><stop offset="0.55" stop-color="#8C6CFF" stop-opacity="0.55"/><stop offset="1" stop-color="#8C6CFF" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="16" cy="15" r="15" fill="url(#glow8C6CFF)" fill-opacity="0.06"/>
+<circle cx="16" cy="15" r="12" fill="url(#glow8C6CFF)" fill-opacity="0.12"/>
+<circle cx="16" cy="15" r="9" fill="url(#glow8C6CFF)" fill-opacity="0.18"/>
+<circle cx="16" cy="15" r="6" fill="url(#glow8C6CFF)" fill-opacity="0.24"/>
+<circle cx="16" cy="15" r="3" fill="url(#glow8C6CFF)" fill-opacity="0.31"/>
+<path d="M3.44 6.11 L6.91 8.87 L9.94 12.25 L12.19 16.17 L13.49 20.12 L14.18 24.15M11.04 4 L12.41 7.34 L13.61 11.23 L14.5 15.54 L15.01 19.7 L15.28 23.85M20.96 4 L19.59 7.34 L18.39 11.23 L17.5 15.54 L16.99 19.7 L16.72 23.85M28.56 6.11 L25.09 8.87 L22.06 12.24 L19.81 16.17 L18.51 20.12 L17.82 24.15" fill="none" stroke="#9478F0" stroke-width="0.6" stroke-opacity="0.45" stroke-linejoin="round"/>
+<path d="M30.5 8.5 L26.5 10.6 L23 13.4 L20.4 16.9 L18.9 20.6 L18.1 24.5M1.5 8.5 L5.5 10.6 L9 13.4 L11.6 16.9 L13.1 20.6 L13.9 24.5" fill="none" stroke="#C9B6FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="16" cy="8.5" rx="14.5" ry="4.79" fill="none" stroke="#D6CAFF" stroke-width="1.5"/>
+<ellipse cx="16" cy="10.6" rx="10.5" ry="3.47" fill="none" stroke="#C2B2FF" stroke-width="1.35"/>
+<ellipse cx="16" cy="13.4" rx="7" ry="2.31" fill="none" stroke="#A68CF8" stroke-width="1.25"/>
+<ellipse cx="16" cy="16.9" rx="4.4" ry="1.45" fill="none" stroke="#8C6CF0" stroke-width="1.1"/>
+<ellipse cx="16" cy="20.6" rx="2.9" ry="0.96" fill="none" stroke="#7656D8" stroke-width="1"/>
+<path d="M28.56 10.89 L25.09 12.33 L22.06 14.55 L19.81 17.63 L18.51 21.08 L17.82 24.85M20.96 13 L19.59 13.86 L18.39 15.57 L17.5 18.26 L16.99 21.5 L16.72 25.15M11.04 13 L12.41 13.86 L13.61 15.57 L14.5 18.26 L15.01 21.5 L15.28 25.15M3.44 10.89 L6.91 12.33 L9.94 14.55 L12.19 17.63 L13.49 21.08 L14.18 24.85" fill="none" stroke="#C9B6FF" stroke-width="0.7" stroke-opacity="0.8" stroke-linejoin="round"/>
+<ellipse cx="16" cy="24.5" rx="2.1" ry="1.2" fill="#05030C" stroke="#B49CFF" stroke-width="0.6"/>
+</svg>

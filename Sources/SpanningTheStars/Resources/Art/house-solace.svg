@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<!-- House crest: The Solace Trust -->
+<defs>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<linearGradient id="rimIn" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<radialGradient id="field" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#4F8EF0"/><stop offset="0.6" stop-color="#2457B8"/><stop offset="1" stop-color="#0A1E4A"/></radialGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<clipPath id="fieldClip">
+<circle cx="64" cy="64" r="51"/></clipPath>
+<linearGradient id="coin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF1C4"/><stop offset="0.45" stop-color="#F1D58A"/><stop offset="0.7" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<linearGradient id="coinIn" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F1D58A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+</defs>
+
+<circle cx="65.5" cy="66.5" r="61" fill="#000000" fill-opacity="0.35"/>
+<!-- Rim -->
+<circle cx="64" cy="64" r="61" fill="url(#rim)"/>
+<circle cx="64" cy="64" r="60.2" fill="none" stroke="#8A6A2E" stroke-width="0.8"/>
+<circle cx="64" cy="64" r="53" fill="url(#rimIn)"/>
+<circle cx="120.5" cy="64" r="1.1" fill="#8A6A2E"/>
+<circle cx="118.57" cy="78.62" r="1.1" fill="#8A6A2E"/>
+<circle cx="112.93" cy="92.25" r="1.1" fill="#8A6A2E"/>
+<circle cx="103.95" cy="103.95" r="1.1" fill="#8A6A2E"/>
+<circle cx="92.25" cy="112.93" r="1.1" fill="#8A6A2E"/>
+<circle cx="78.62" cy="118.57" r="1.1" fill="#8A6A2E"/>
+<circle cx="64" cy="120.5" r="1.1" fill="#8A6A2E"/>
+<circle cx="49.38" cy="118.57" r="1.1" fill="#8A6A2E"/>
+<circle cx="35.75" cy="112.93" r="1.1" fill="#8A6A2E"/>
+<circle cx="24.05" cy="103.95" r="1.1" fill="#8A6A2E"/>
+<circle cx="15.07" cy="92.25" r="1.1" fill="#8A6A2E"/>
+<circle cx="9.43" cy="78.62" r="1.1" fill="#8A6A2E"/>
+<circle cx="7.5" cy="64" r="1.1" fill="#8A6A2E"/>
+<circle cx="9.43" cy="49.38" r="1.1" fill="#8A6A2E"/>
+<circle cx="15.07" cy="35.75" r="1.1" fill="#8A6A2E"/>
+<circle cx="24.05" cy="24.05" r="1.1" fill="#8A6A2E"/>
+<circle cx="35.75" cy="15.07" r="1.1" fill="#8A6A2E"/>
+<circle cx="49.38" cy="9.43" r="1.1" fill="#8A6A2E"/>
+<circle cx="64" cy="7.5" r="1.1" fill="#8A6A2E"/>
+<circle cx="78.62" cy="9.43" r="1.1" fill="#8A6A2E"/>
+<circle cx="92.25" cy="15.07" r="1.1" fill="#8A6A2E"/>
+<circle cx="103.95" cy="24.05" r="1.1" fill="#8A6A2E"/>
+<circle cx="112.93" cy="35.75" r="1.1" fill="#8A6A2E"/>
+<circle cx="118.57" cy="49.38" r="1.1" fill="#8A6A2E"/>
+<!-- Field -->
+<circle cx="64" cy="64" r="51" fill="url(#field)"/>
+<g clip-path="url(#fieldClip)">
+<circle cx="64" cy="64" r="44" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.25"/>
+<circle cx="66" cy="67" r="32" fill="#000000" fill-opacity="0.35"/>
+<circle cx="64" cy="64" r="32" fill="url(#coin)"/>
+<circle cx="64" cy="64" r="30.5" fill="none" stroke="#8A6A2E" stroke-width="2.6" stroke-dasharray="1.2 1.6"/>
+<circle cx="64" cy="64" r="26" fill="url(#coinIn)"/>
+<circle cx="64" cy="64" r="24.5" fill="url(#coin)"/>
+<circle cx="64" cy="64" r="20" fill="none" stroke="#8A6A2E" stroke-width="0.6" stroke-dasharray="0.8 2.2"/>
+<!-- Engraved recess: the star sits in a darker sunken bed so it reads against the coin at 40 pt -->
+<polygon points="64,42.5 69.29,56.72 84.45,57.36 72.56,66.78 76.64,81.39 64,73 51.36,81.39 55.44,66.78 43.55,57.36 58.71,56.72" fill="#5A4214" fill-opacity="0.85" stroke="#3E2C0A" stroke-width="0.8" stroke-linejoin="round"/>
+<polygon points="63.4,41.7 68.69,55.92 83.85,56.56 71.96,65.98 76.04,80.59 63.4,72.2 50.76,80.59 54.84,65.98 42.95,56.56 58.11,55.92" fill="none" stroke="#FFF1C4" stroke-width="0.6" stroke-opacity="0.35" stroke-linejoin="round"/>
+<polygon points="65,47.5 69.23,59.68 82.12,59.94 71.85,67.72 75.58,80.06 65,72.7 54.42,80.06 58.15,67.72 47.88,59.94 60.77,59.68" fill="#2A1E06" fill-opacity="0.7"/>
+<polygon points="64,64 59.77,58.18 64,46" fill="#FFF6DA"/>
+<polygon points="64,64 64,46 68.23,58.18" fill="#B08A3E"/>
+<polygon points="64,64 68.23,58.18 81.12,58.44" fill="#FFF6DA"/>
+<polygon points="64,64 81.12,58.44 70.85,66.22" fill="#B08A3E"/>
+<polygon points="64,64 70.85,66.22 74.58,78.56" fill="#FFF6DA"/>
+<polygon points="64,64 74.58,78.56 64,71.2" fill="#B08A3E"/>
+<polygon points="64,64 64,71.2 53.42,78.56" fill="#FFF6DA"/>
+<polygon points="64,64 53.42,78.56 57.15,66.22" fill="#B08A3E"/>
+<polygon points="64,64 57.15,66.22 46.88,58.44" fill="#FFF6DA"/>
+<polygon points="64,64 46.88,58.44 59.77,58.18" fill="#B08A3E"/>
+<polygon points="64,46 68.23,58.18 81.12,58.44 70.85,66.22 74.58,78.56 64,71.2 53.42,78.56 57.15,66.22 46.88,58.44 59.77,58.18" fill="none" stroke="#5A4214" stroke-width="0.7" stroke-linejoin="round"/>
+<path d="M40 44A28 28 0 0 1 62 34" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.7"/>
+<path d="M24 34.8 Q24.94 39.06 29.2 40 Q24.94 40.94 24 45.2 Q23.06 40.94 18.8 40 Q23.06 39.06 24 34.8Z" fill="#DDE9FF" fill-opacity="0.85"/>
+<path d="M104 41.6 Q104.79 45.21 108.4 46 Q104.79 46.79 104 50.4 Q103.21 46.79 99.6 46 Q103.21 45.21 104 41.6Z" fill="#DDE9FF" fill-opacity="0.85"/>
+<path d="M30 88.4 Q30.65 91.35 33.6 92 Q30.65 92.65 30 95.6 Q29.35 92.65 26.4 92 Q29.35 91.35 30 88.4Z" fill="#DDE9FF" fill-opacity="0.85"/>
+<path d="M100 90.8 Q100.94 95.06 105.2 96 Q100.94 96.94 100 101.2 Q99.06 96.94 94.8 96 Q99.06 95.06 100 90.8Z" fill="#DDE9FF" fill-opacity="0.85"/>
+</g>
+<circle cx="64" cy="64" r="51" fill="none" stroke="#8A6A2E" stroke-width="1.2"/>
+<path d="M18 46A49 49 0 0 1 90 18" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-opacity="0.35"/>
+</svg>

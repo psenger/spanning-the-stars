@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+<!-- System marker: Ember Belt (orange-red star with a dust ring) -->
+<defs>
+<radialGradient id="core" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#FFFFFF"/><stop offset="0.8" stop-color="#FF8A3C"/><stop offset="1" stop-color="#FF8A3C"/></radialGradient>
+<radialGradient id="glow05070F" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#05070F"/><stop offset="0.55" stop-color="#05070F" stop-opacity="0.55"/><stop offset="1" stop-color="#05070F" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowF7602A" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#F7602A"/><stop offset="0.55" stop-color="#F7602A" stop-opacity="0.55"/><stop offset="1" stop-color="#F7602A" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowFFC170" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFC170"/><stop offset="0.55" stop-color="#FFC170" stop-opacity="0.55"/><stop offset="1" stop-color="#FFC170" stop-opacity="0"/></radialGradient>
+</defs>
+<!-- Dark backing glow separates the star from the Ember Belt dust -->
+<circle cx="24" cy="24" r="21" fill="url(#glow05070F)" fill-opacity="0.06"/>
+<circle cx="24" cy="24" r="16.8" fill="url(#glow05070F)" fill-opacity="0.13"/>
+<circle cx="24" cy="24" r="12.6" fill="url(#glow05070F)" fill-opacity="0.2"/>
+<circle cx="24" cy="24" r="8.4" fill="url(#glow05070F)" fill-opacity="0.27"/>
+<circle cx="24" cy="24" r="4.2" fill="url(#glow05070F)" fill-opacity="0.34"/>
+<circle cx="24" cy="24" r="22" fill="url(#glowF7602A)" fill-opacity="0.08"/>
+<circle cx="24" cy="24" r="18.48" fill="url(#glowF7602A)" fill-opacity="0.15"/>
+<circle cx="24" cy="24" r="14.96" fill="url(#glowF7602A)" fill-opacity="0.22"/>
+<circle cx="24" cy="24" r="11.44" fill="url(#glowF7602A)" fill-opacity="0.29"/>
+<circle cx="24" cy="24" r="7.92" fill="url(#glowF7602A)" fill-opacity="0.36"/>
+<circle cx="24" cy="24" r="4.4" fill="url(#glowF7602A)" fill-opacity="0.4"/>
+<g transform="rotate(18 24 24)">
+<path d="M6 24A18 6.5 0 0 1 42 24" fill="none" stroke="#FFD08A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.1 2.2" stroke-opacity="0.7"/>
+</g>
+<polygon points="22.75,24 24,9 25.25,24" fill="#FFF1D6"/>
+<polygon points="24,22.75 39,24 24,25.25" fill="#FFF1D6"/>
+<polygon points="25.25,24 24,39 22.75,24" fill="#FFF1D6"/>
+<polygon points="24,25.25 9,24 24,22.75" fill="#FFF1D6"/>
+<circle cx="24" cy="24" r="10" fill="url(#glowFFC170)" fill-opacity="0.11"/>
+<circle cx="24" cy="24" r="7.33" fill="url(#glowFFC170)" fill-opacity="0.29"/>
+<circle cx="24" cy="24" r="4.67" fill="url(#glowFFC170)" fill-opacity="0.4"/>
+<circle cx="24" cy="24" r="2" fill="url(#glowFFC170)" fill-opacity="0.4"/>
+<circle cx="24" cy="24" r="6" fill="url(#core)"/>
+<g transform="rotate(18 24 24)">
+<path d="M6 24A18 6.5 0 0 0 42 24" fill="none" stroke="#FFD08A" stroke-width="1.9" stroke-linecap="round" stroke-dasharray="0.1 2"/>
+<circle cx="36" cy="29" r="1.4" fill="#FFF1D6"/>
+<circle cx="9" cy="27" r="1.1" fill="#FFF1D6"/>
+</g>
+</svg>

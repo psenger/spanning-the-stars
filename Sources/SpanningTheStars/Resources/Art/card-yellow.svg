@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+<!-- Resource card: Solar Sails (yellow) -->
+<defs>
+<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8A01E"/><stop offset="0.62" stop-color="#82600A"/><stop offset="1" stop-color="#82600A"/></linearGradient>
+<radialGradient id="shade" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1"><stop offset="0" stop-color="#000000"/><stop offset="0.6" stop-color="#000000" stop-opacity="0.55"/><stop offset="1" stop-color="#000000" stop-opacity="0"/></radialGradient>
+<clipPath id="win"><path d="M9 236V16Q9 9 16 9H184Q191 9 191 16V236Z"/></clipPath>
+<linearGradient id="sail" gradientUnits="userSpaceOnUse" x1="150" y1="90" x2="46" y2="150"><stop offset="0" stop-color="#FFFDF0"/><stop offset="0.3" stop-color="#FFEFA6"/><stop offset="0.7" stop-color="#F0BE30"/><stop offset="1" stop-color="#B8860B"/></linearGradient>
+<linearGradient id="hullG" gradientUnits="userSpaceOnUse" x1="0" y1="-7" x2="0" y2="7"><stop offset="0" stop-color="#F2F5FB"/><stop offset="0.45" stop-color="#A8B0C4"/><stop offset="1" stop-color="#4A5062"/></linearGradient>
+<linearGradient id="bellG" gradientUnits="userSpaceOnUse" x1="0" y1="-10" x2="0" y2="10"><stop offset="0" stop-color="#8A93A8"/><stop offset="0.5" stop-color="#3A3F52"/><stop offset="1" stop-color="#1E212C"/></linearGradient>
+<linearGradient id="i-sl" gradientUnits="userSpaceOnUse" x1="58" y1="6" x2="20" y2="34"><stop offset="0" stop-color="#FFF6C2"/><stop offset="0.45" stop-color="#F7D23E"/><stop offset="1" stop-color="#C9930E"/></linearGradient>
+<radialGradient id="med" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#D8A01E"/><stop offset="1" stop-color="#05070F"/></radialGradient>
+<radialGradient id="glowFFF6C2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF6C2"/><stop offset="0.55" stop-color="#FFF6C2" stop-opacity="0.55"/><stop offset="1" stop-color="#FFF6C2" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowFFFFFF" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowBFE4FF" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#BFE4FF"/><stop offset="0.55" stop-color="#BFE4FF" stop-opacity="0.55"/><stop offset="1" stop-color="#BFE4FF" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="0" y="0" width="200" height="300" rx="14" fill="#82600A"/>
+<rect x="6" y="6" width="188" height="288" rx="9" fill="url(#body)"/>
+<g clip-path="url(#win)">
+<!-- Background star specks -->
+<circle cx="137.92" cy="210.05" r="0.31" fill="#FFFFFF" fill-opacity="0.53"/>
+<circle cx="157.78" cy="22.58" r="0.82" fill="#FFFFFF" fill-opacity="0.47"/>
+<circle cx="43.79" cy="225.64" r="0.54" fill="#FFFFFF" fill-opacity="0.31"/>
+<circle cx="127.68" cy="163.23" r="0.79" fill="#FFFFFF" fill-opacity="0.24"/>
+<circle cx="97.12" cy="40.51" r="0.48" fill="#FFFFFF" fill-opacity="0.33"/>
+<circle cx="23.41" cy="87.44" r="0.83" fill="#FFFFFF" fill-opacity="0.2"/>
+<circle cx="88.02" cy="18.31" r="0.78" fill="#FFFFFF" fill-opacity="0.16"/>
+<circle cx="42.72" cy="175.46" r="0.59" fill="#FFFFFF" fill-opacity="0.36"/>
+<circle cx="119.66" cy="120.26" r="0.58" fill="#FFFFFF" fill-opacity="0.19"/>
+<circle cx="35.59" cy="55.25" r="0.46" fill="#FFFFFF" fill-opacity="0.26"/>
+<circle cx="170.53" cy="57.4" r="0.39" fill="#FFFFFF" fill-opacity="0.24"/>
+<circle cx="33.74" cy="194.06" r="0.92" fill="#FFFFFF" fill-opacity="0.45"/>
+<circle cx="181.63" cy="132.06" r="0.59" fill="#FFFFFF" fill-opacity="0.29"/>
+<circle cx="127.46" cy="63.15" r="0.64" fill="#FFFFFF" fill-opacity="0.29"/>
+<circle cx="130.31" cy="203.47" r="0.73" fill="#FFFFFF" fill-opacity="0.18"/>
+<circle cx="116.83" cy="172.35" r="0.65" fill="#FFFFFF" fill-opacity="0.15"/>
+<circle cx="26.94" cy="129.63" r="0.77" fill="#FFFFFF" fill-opacity="0.33"/>
+<circle cx="141.15" cy="131.99" r="0.84" fill="#FFFFFF" fill-opacity="0.21"/>
+<circle cx="159.68" cy="176.15" r="0.37" fill="#FFFFFF" fill-opacity="0.22"/>
+<circle cx="62.84" cy="184.5" r="0.71" fill="#FFFFFF" fill-opacity="0.15"/>
+<circle cx="142.36" cy="78.19" r="0.86" fill="#FFFFFF" fill-opacity="0.24"/>
+<circle cx="28.34" cy="83.56" r="0.6" fill="#FFFFFF" fill-opacity="0.3"/>
+<circle cx="106.68" cy="33.92" r="0.48" fill="#FFFFFF" fill-opacity="0.14"/>
+<circle cx="187.65" cy="118.18" r="0.49" fill="#FFFFFF" fill-opacity="0.19"/>
+<circle cx="118.83" cy="11.09" r="0.4" fill="#FFFFFF" fill-opacity="0.41"/>
+<circle cx="105.01" cy="167.09" r="0.85" fill="#FFFFFF" fill-opacity="0.26"/>
+<circle cx="147.36" cy="188.76" r="0.84" fill="#FFFFFF" fill-opacity="0.35"/>
+<circle cx="147.43" cy="17.56" r="0.42" fill="#FFFFFF" fill-opacity="0.37"/>
+<circle cx="109.88" cy="145.6" r="0.57" fill="#FFFFFF" fill-opacity="0.14"/>
+<circle cx="67.63" cy="54.35" r="0.73" fill="#FFFFFF" fill-opacity="0.22"/>
+<circle cx="146.78" cy="129.01" r="0.55" fill="#FFFFFF" fill-opacity="0.38"/>
+<circle cx="170.04" cy="83.74" r="0.34" fill="#FFFFFF" fill-opacity="0.49"/>
+<circle cx="62.15" cy="208" r="0.61" fill="#FFFFFF" fill-opacity="0.3"/>
+<circle cx="161.62" cy="35.32" r="0.86" fill="#FFFFFF" fill-opacity="0.24"/>
+<circle cx="149.65" cy="222.29" r="0.84" fill="#FFFFFF" fill-opacity="0.27"/>
+<circle cx="184.22" cy="127.19" r="0.49" fill="#FFFFFF" fill-opacity="0.28"/>
+<circle cx="25.29" cy="149.95" r="0.59" fill="#FFFFFF" fill-opacity="0.36"/>
+<circle cx="169.36" cy="109.87" r="0.32" fill="#FFFFFF" fill-opacity="0.38"/>
+<circle cx="25.66" cy="142.68" r="0.65" fill="#FFFFFF" fill-opacity="0.31"/>
+<circle cx="128.88" cy="29.61" r="0.53" fill="#FFFFFF" fill-opacity="0.21"/>
+<circle cx="48.76" cy="36.47" r="0.44" fill="#FFFFFF" fill-opacity="0.49"/>
+<circle cx="186" cy="146.75" r="0.8" fill="#FFFFFF" fill-opacity="0.13"/>
+<circle cx="71.04" cy="170.05" r="0.89" fill="#FFFFFF" fill-opacity="0.14"/>
+<circle cx="188.42" cy="225.63" r="0.36" fill="#FFFFFF" fill-opacity="0.29"/>
+<circle cx="174.36" cy="86.4" r="0.41" fill="#FFFFFF" fill-opacity="0.37"/>
+<circle cx="122.4" cy="181.18" r="0.44" fill="#FFFFFF" fill-opacity="0.34"/>
+<circle cx="44.96" cy="218.22" r="0.89" fill="#FFFFFF" fill-opacity="0.53"/>
+<circle cx="34.51" cy="49.64" r="0.83" fill="#FFFFFF" fill-opacity="0.32"/>
+<circle cx="162.85" cy="153.14" r="0.32" fill="#FFFFFF" fill-opacity="0.17"/>
+<circle cx="140.86" cy="70.73" r="0.56" fill="#FFFFFF" fill-opacity="0.39"/>
+<circle cx="19.64" cy="32.09" r="0.62" fill="#FFFFFF" fill-opacity="0.13"/>
+<circle cx="72.08" cy="96.2" r="0.36" fill="#FFFFFF" fill-opacity="0.16"/>
+<circle cx="147.34" cy="162.14" r="0.62" fill="#FFFFFF" fill-opacity="0.31"/>
+<circle cx="174.65" cy="114.06" r="0.41" fill="#FFFFFF" fill-opacity="0.34"/>
+<circle cx="98.17" cy="132.87" r="0.53" fill="#FFFFFF" fill-opacity="0.34"/>
+<circle cx="17.28" cy="159.23" r="0.88" fill="#FFFFFF" fill-opacity="0.44"/>
+<circle cx="161.18" cy="227.3" r="0.62" fill="#FFFFFF" fill-opacity="0.3"/>
+<circle cx="143.68" cy="59" r="0.5" fill="#FFFFFF" fill-opacity="0.38"/>
+<circle cx="16.24" cy="227.11" r="0.91" fill="#FFFFFF" fill-opacity="0.34"/>
+<circle cx="121.8" cy="86.53" r="0.6" fill="#FFFFFF" fill-opacity="0.16"/>
+<!-- Scene -->
+<circle cx="158" cy="50" r="120" fill="url(#glowFFF6C2)" fill-opacity="0.04"/>
+<circle cx="158" cy="50" r="104" fill="url(#glowFFF6C2)" fill-opacity="0.08"/>
+<circle cx="158" cy="50" r="88" fill="url(#glowFFF6C2)" fill-opacity="0.11"/>
+<circle cx="158" cy="50" r="72" fill="url(#glowFFF6C2)" fill-opacity="0.14"/>
+<circle cx="158" cy="50" r="56" fill="url(#glowFFF6C2)" fill-opacity="0.18"/>
+<circle cx="158" cy="50" r="40" fill="url(#glowFFF6C2)" fill-opacity="0.21"/>
+<circle cx="158" cy="50" r="24" fill="url(#glowFFF6C2)" fill-opacity="0.24"/>
+<circle cx="158" cy="50" r="36" fill="url(#glowFFFFFF)" fill-opacity="0.07"/>
+<circle cx="158" cy="50" r="28.8" fill="url(#glowFFFFFF)" fill-opacity="0.16"/>
+<circle cx="158" cy="50" r="21.6" fill="url(#glowFFFFFF)" fill-opacity="0.24"/>
+<circle cx="158" cy="50" r="14.4" fill="url(#glowFFFFFF)" fill-opacity="0.32"/>
+<circle cx="158" cy="50" r="7.2" fill="url(#glowFFFFFF)" fill-opacity="0.4"/>
+<path d="M158 50L417.37 68.14M158 50L357.17 217.12M158 50L220.9 302.28M158 50L60.6 291.07M158 50L-62.49 187.78M158 50L-101.37 31.86M158 50L-41.17 -117.12M158 50L95.1 -202.28M158 50L255.4 -191.07M158 50L378.49 -87.78" stroke="#FFF6C2" stroke-width="1.3" stroke-opacity="0.35"/>
+<path d="M158 50L399.07 147.4M158 50L295.78 270.49M158 50L139.86 309.37M158 50L-9.12 249.17M158 50L-94.28 112.9M158 50L-83.07 -47.4M158 50L20.22 -170.49M158 50L176.14 -209.37M158 50L325.12 -149.17M158 50L410.28 -12.9" stroke="#FFF6C2" stroke-width="0.6" stroke-opacity="0.25"/>
+<circle cx="158" cy="50" r="15" fill="#FFFFFF" fill-opacity="0.55"/>
+<circle cx="158" cy="50" r="9" fill="#FFFFFF"/>
+<path d="M158 26 Q160.4 47.6 182 50 Q160.4 52.4 158 74 Q155.6 52.4 134 50 Q155.6 47.6 158 26Z" fill="#FFFFFF" fill-opacity="0.9"/>
+<!-- Solar sail spacecraft: square sail, fanned rigging, tug with habitat ring and engine bell -->
+<path d="M53 71L149 99L141 173L43 141Z" fill="#3A2604" fill-opacity="0.25"/>
+<path d="M50 66Q98 78 146 94Q148 133 138 168Q91 161 40 136Q40 101 50 66Z" fill="url(#sail)"/>
+<path d="M81.68 75.24Q80.01 113.9 72.34 151.72M113.36 84.48Q112.02 123.8 104.68 162.38" fill="none" stroke="#B8860B" stroke-width="0.7" stroke-opacity="0.55"/>
+<polygon points="102.8,81.4 126.8,88.4 84.1,150.4 59.6,142.4" fill="#FFFFFF" fill-opacity="0.22"/>
+<path d="M50 66Q98 78 146 94Q148 133 138 168Q91 161 40 136Q40 101 50 66Z" fill="none" stroke="#6B4A05" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M50 66L146 94L138 168" fill="none" stroke="#FFFDF0" stroke-width="1.4" stroke-linejoin="round" stroke-opacity="0.9"/>
+<circle cx="50" cy="66" r="2.2" fill="#F1D58A" stroke="#6B4A05" stroke-width="0.6"/><circle cx="146" cy="94" r="2.2" fill="#F1D58A" stroke="#6B4A05" stroke-width="0.6"/><circle cx="138" cy="168" r="2.2" fill="#F1D58A" stroke="#6B4A05" stroke-width="0.6"/><circle cx="40" cy="136" r="2.2" fill="#F1D58A" stroke="#6B4A05" stroke-width="0.6"/>
+<path d="M77.76 191.69L50 66M77.76 191.69L146 94M77.76 191.69L138 168M77.76 191.69L40 136" stroke="#FFF6C2" stroke-width="0.8" stroke-opacity="0.75"/>
+<circle cx="40.72" cy="220.62" r="14" fill="url(#glowBFE4FF)" fill-opacity="0.07"/>
+<circle cx="40.72" cy="220.62" r="11.2" fill="url(#glowBFE4FF)" fill-opacity="0.16"/>
+<circle cx="40.72" cy="220.62" r="8.4" fill="url(#glowBFE4FF)" fill-opacity="0.24"/>
+<circle cx="40.72" cy="220.62" r="5.6" fill="url(#glowBFE4FF)" fill-opacity="0.32"/>
+<circle cx="40.72" cy="220.62" r="2.8" fill="url(#glowBFE4FF)" fill-opacity="0.4"/>
+<g transform="translate(62 204) rotate(-38)">
+<path d="M-18 -4.5L-27 -9.5L-27 9.5L-18 4.5Z" fill="url(#bellG)" stroke="#1E212C" stroke-width="0.6"/>
+<ellipse cx="-27" cy="0" rx="1.6" ry="9.5" fill="#BFE4FF" fill-opacity="0.85"/>
+<rect x="-18" y="-7" width="32" height="14" rx="3.5" fill="url(#hullG)" stroke="#2A2E3C" stroke-width="0.7"/>
+<path d="M14 -7Q22 0 14 7Z" fill="url(#hullG)" stroke="#2A2E3C" stroke-width="0.7"/>
+<path d="M-12 -7V7M6 -7V7" stroke="#2A2E3C" stroke-width="0.6" stroke-opacity="0.6"/>
+<rect x="8" y="-3.2" width="4.5" height="2.6" rx="0.8" fill="#FFF6C2"/>
+<ellipse cx="-3" cy="0" rx="3.4" ry="12" fill="none" stroke="#C9A55A" stroke-width="2.4"/>
+<path d="M-6 -11A3.4 12 0 0 1 -1 -11.6" fill="none" stroke="#F1D58A" stroke-width="1" stroke-linecap="round"/>
+<path d="M-15 -5H12" stroke="#FFFFFF" stroke-width="0.9" stroke-opacity="0.7" stroke-linecap="round"/>
+</g>
+<path d="M146 87 Q147.26 92.74 153 94 Q147.26 95.26 146 101 Q144.74 95.26 139 94 Q144.74 92.74 146 87Z" fill="#FFFFFF" fill-opacity="0.9"/>
+</g>
+<!-- Name band: kept calm and dark for the resource name -->
+<path d="M9 236H191V284Q191 291 184 291H16Q9 291 9 284Z" fill="#05070F" fill-opacity="0.9"/>
+<path d="M22 236H92M108 236H178" stroke="#C9A55A" stroke-width="1"/>
+<polygon points="100,231.5 104.5,236 100,240.5 95.5,236" fill="#F1D58A"/>
+<circle cx="16" cy="236" r="1.1" fill="#C9A55A"/><circle cx="184" cy="236" r="1.1" fill="#C9A55A"/>
+<!-- Dark keylines either side of the brass so the frame holds on light bodies -->
+<rect x="7.2" y="7.2" width="185.6" height="285.6" rx="8.4" fill="none" stroke="#05070F" stroke-width="1.2" stroke-opacity="0.55"/>
+<rect x="10.8" y="10.8" width="178.4" height="278.4" rx="5.6" fill="none" stroke="#05070F" stroke-width="1.2" stroke-opacity="0.55"/>
+<!-- Concord brass hairlines -->
+<rect x="9" y="9" width="182" height="282" rx="7" fill="none" stroke="#C9A55A" stroke-width="1.5"/>
+<rect x="12.5" y="12.5" width="175" height="275" rx="5" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.35"/>
+<!-- Corner ornaments (identical on every resource card) -->
+<g transform="translate(191 9) scale(-1 1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(9 291) scale(1 -1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(191 291) scale(-1 -1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<polygon points="100,5.5 103.5,9 100,12.5 96.5,9" fill="#F1D58A"/>
+<!-- Corner medallion with the resource icon -->
+<path d="M9 52V16Q9 9 16 9H52" fill="none" stroke="#C9A55A" stroke-width="1.5"/>
+<circle cx="31" cy="31" r="18" fill="url(#med)" stroke="#C9A55A" stroke-width="1.6"/>
+<circle cx="31" cy="31" r="15.2" fill="none" stroke="#F1D58A" stroke-width="0.5" stroke-opacity="0.5"/>
+<g transform="translate(18.5 18.5) scale(0.390625)">
+<path d="M24 3Q42.5 6 61 11Q61.5 26 57 39Q38 39 19 29Q19.5 15.5 24 3Z" fill="url(#i-sl)" stroke="#8A6208" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M36.5 6Q38 22 33 34M49 8.5Q52 24 46 37" fill="none" stroke="#9A6E08" stroke-width="1" stroke-opacity="0.6"/>
+<path d="M24 3Q42.5 6 61 11" fill="none" stroke="#FFFDF0" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M23.41 44.86L24 3M23.41 44.86L61 11M23.41 44.86L57 39M23.41 44.86L19 29" stroke="#E8DCA8" stroke-width="1" stroke-opacity="0.9" stroke-linecap="round"/>
+<g transform="translate(15.5 51.5) rotate(-40)"><path d="M-7.25 -3.7L-15.17 -7.48L-15.17 7.48L-7.25 3.7Z" fill="#4A5062"/><rect x="-7.25" y="-4.4" width="14.5" height="8.8" rx="2.2" fill="#D2D8E4"/><path d="M7.25 -4.4Q11.65 0 7.25 4.4Z" fill="#D2D8E4"/><ellipse cx="-1.45" cy="0" rx="2.46" ry="8.36" fill="none" stroke="#C9A55A" stroke-width="2.29"/></g>
+</g>
+</svg>

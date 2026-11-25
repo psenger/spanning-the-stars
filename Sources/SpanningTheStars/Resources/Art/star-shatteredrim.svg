@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+<!-- System marker: Shattered Rim (blue-white dwarf with a fractured ring) -->
+<defs>
+<radialGradient id="core" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#FFFFFF"/><stop offset="0.8" stop-color="#9FD0FF"/><stop offset="1" stop-color="#9FD0FF"/></radialGradient>
+<radialGradient id="glow9FD4FF" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#9FD4FF"/><stop offset="0.55" stop-color="#9FD4FF" stop-opacity="0.55"/><stop offset="1" stop-color="#9FD4FF" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowE6F4FF" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E6F4FF"/><stop offset="0.55" stop-color="#E6F4FF" stop-opacity="0.55"/><stop offset="1" stop-color="#E6F4FF" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="24" cy="24" r="22" fill="url(#glow9FD4FF)" fill-opacity="0.07"/>
+<circle cx="24" cy="24" r="18.48" fill="url(#glow9FD4FF)" fill-opacity="0.14"/>
+<circle cx="24" cy="24" r="14.96" fill="url(#glow9FD4FF)" fill-opacity="0.2"/>
+<circle cx="24" cy="24" r="11.44" fill="url(#glow9FD4FF)" fill-opacity="0.27"/>
+<circle cx="24" cy="24" r="7.92" fill="url(#glow9FD4FF)" fill-opacity="0.33"/>
+<circle cx="24" cy="24" r="4.4" fill="url(#glow9FD4FF)" fill-opacity="0.4"/>
+<g transform="rotate(-24 24 24)">
+<path d="M41 24L40.84 24.88L40.38 25.74L39.62 26.57L38.57 27.35L37.26 28.07L35.7 28.71L33.93 29.28L31.98 29.74M28.69 30.25L26.29 30.44L23.85 30.5L21.41 30.42L19.03 30.22L16.75 29.88L14.62 29.42L12.68 28.85L10.98 28.18M8.99 27.05L8.05 26.25L7.4 25.41L7.06 24.54L7.02 23.66L7.3 22.79L7.88 21.94L8.75 21.13L9.91 20.37M13.07 19.02L14.87 18.52L16.82 18.11L18.89 17.8L21.05 17.6L23.26 17.51L25.48 17.52L27.68 17.65L29.81 17.89M32.5 18.37L34.05 18.76L35.49 19.21L36.78 19.71L37.93 20.27L38.9 20.87L39.71 21.51L40.32 22.18L40.74 22.87" fill="none" stroke="#DCEEFF" stroke-width="2" stroke-linecap="round"/>
+<circle cx="41.4" cy="27.2" r="1" fill="#DCEEFF"/>
+<circle cx="8" cy="28.6" r="0.9" fill="#DCEEFF"/>
+<circle cx="19.6" cy="16.6" r="0.8" fill="#DCEEFF" fill-opacity="0.8"/>
+</g>
+<polygon points="22.75,24 24,9 25.25,24" fill="#FFFFFF"/>
+<polygon points="24,22.75 39,24 24,25.25" fill="#FFFFFF"/>
+<polygon points="25.25,24 24,39 22.75,24" fill="#FFFFFF"/>
+<polygon points="24,25.25 9,24 24,22.75" fill="#FFFFFF"/>
+<circle cx="24" cy="24" r="10" fill="url(#glowE6F4FF)" fill-opacity="0.09"/>
+<circle cx="24" cy="24" r="7.33" fill="url(#glowE6F4FF)" fill-opacity="0.23"/>
+<circle cx="24" cy="24" r="4.67" fill="url(#glowE6F4FF)" fill-opacity="0.37"/>
+<circle cx="24" cy="24" r="2" fill="url(#glowE6F4FF)" fill-opacity="0.4"/>
+<circle cx="24" cy="24" r="6" fill="url(#core)"/>
+</svg>

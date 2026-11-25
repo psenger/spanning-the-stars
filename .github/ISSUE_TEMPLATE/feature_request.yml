@@ -1,0 +1,69 @@
+name: Feature request
+description: Suggest a rule, a screen change, an AI improvement, or anything else the game should do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Good ideas welcome, from a small quality-of-life fix to a new Frontier Hazards rule.
+
+        For an AI improvement, include the difficulty level and a game situation where it would help.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What is awkward, missing, or slow today? Describe when you run into it.
+      placeholder: When setting up an all-bot game, I have to set the same difficulty for each House separately.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: The change you would like
+      description: What should the game do instead? Sketches, mock-ups, and examples are welcome.
+      placeholder: Add a setup control that applies one bot difficulty to all selected Houses.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Part of the game
+      options:
+        - Rules of play
+        - Game screen and interaction
+        - AI opponents
+        - Saved games and resume
+        - Accessibility
+        - Build, tests and tooling
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rules-change
+    attributes:
+      label: Does this change how the game plays?
+      description: Changes to the rules affect the Concord Codex, the engine, and the tests.
+      options:
+        - "No, the rules stay the same"
+        - "Yes, it changes a rule or adds one"
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds
+      description: Anything you tried, or other ways this could be solved.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send it
+      options:
+        - label: I searched the open issues for duplicates.

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<!-- House crest: Varn Industrial -->
+<defs>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<linearGradient id="rimIn" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<radialGradient id="field" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#E0483C"/><stop offset="0.6" stop-color="#B3261E"/><stop offset="1" stop-color="#4A0A08"/></radialGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<clipPath id="fieldClip">
+<circle cx="64" cy="64" r="51"/></clipPath>
+<linearGradient id="steelH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F6FA"/><stop offset="0.5" stop-color="#B9C1D0"/><stop offset="1" stop-color="#6C768A"/></linearGradient>
+<linearGradient id="gearG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.55" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+</defs>
+
+<circle cx="65.5" cy="66.5" r="61" fill="#000000" fill-opacity="0.35"/>
+<!-- Rim -->
+<circle cx="64" cy="64" r="61" fill="url(#rim)"/>
+<circle cx="64" cy="64" r="60.2" fill="none" stroke="#8A6A2E" stroke-width="0.8"/>
+<circle cx="64" cy="64" r="53" fill="url(#rimIn)"/>
+<circle cx="120.5" cy="64" r="1.1" fill="#8A6A2E"/>
+<circle cx="118.57" cy="78.62" r="1.1" fill="#8A6A2E"/>
+<circle cx="112.93" cy="92.25" r="1.1" fill="#8A6A2E"/>
+<circle cx="103.95" cy="103.95" r="1.1" fill="#8A6A2E"/>
+<circle cx="92.25" cy="112.93" r="1.1" fill="#8A6A2E"/>
+<circle cx="78.62" cy="118.57" r="1.1" fill="#8A6A2E"/>
+<circle cx="64" cy="120.5" r="1.1" fill="#8A6A2E"/>
+<circle cx="49.38" cy="118.57" r="1.1" fill="#8A6A2E"/>
+<circle cx="35.75" cy="112.93" r="1.1" fill="#8A6A2E"/>
+<circle cx="24.05" cy="103.95" r="1.1" fill="#8A6A2E"/>
+<circle cx="15.07" cy="92.25" r="1.1" fill="#8A6A2E"/>
+<circle cx="9.43" cy="78.62" r="1.1" fill="#8A6A2E"/>
+<circle cx="7.5" cy="64" r="1.1" fill="#8A6A2E"/>
+<circle cx="9.43" cy="49.38" r="1.1" fill="#8A6A2E"/>
+<circle cx="15.07" cy="35.75" r="1.1" fill="#8A6A2E"/>
+<circle cx="24.05" cy="24.05" r="1.1" fill="#8A6A2E"/>
+<circle cx="35.75" cy="15.07" r="1.1" fill="#8A6A2E"/>
+<circle cx="49.38" cy="9.43" r="1.1" fill="#8A6A2E"/>
+<circle cx="64" cy="7.5" r="1.1" fill="#8A6A2E"/>
+<circle cx="78.62" cy="9.43" r="1.1" fill="#8A6A2E"/>
+<circle cx="92.25" cy="15.07" r="1.1" fill="#8A6A2E"/>
+<circle cx="103.95" cy="24.05" r="1.1" fill="#8A6A2E"/>
+<circle cx="112.93" cy="35.75" r="1.1" fill="#8A6A2E"/>
+<circle cx="118.57" cy="49.38" r="1.1" fill="#8A6A2E"/>
+<!-- Field -->
+<circle cx="64" cy="64" r="51" fill="url(#field)"/>
+<g clip-path="url(#fieldClip)">
+<circle cx="64" cy="64" r="44" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.25"/>
+<path d="M90.39 63.65L96.46 64.38L96.46 67.62L90.39 68.35L88.23 76.41L93.12 80.07L91.5 82.88L85.88 80.48L79.98 86.38L82.38 92L79.57 93.62L75.91 88.73L67.85 90.89L67.12 96.96L63.88 96.96L63.15 90.89L55.09 88.73L51.43 93.62L48.62 92L51.02 86.38L45.12 80.48L39.5 82.88L37.88 80.07L42.77 76.41L40.61 68.35L34.54 67.62L34.54 64.38L40.61 63.65L42.77 55.59L37.88 51.93L39.5 49.12L45.12 51.52L51.02 45.62L48.62 40L51.43 38.38L55.09 43.27L63.15 41.11L63.88 35.04L67.12 35.04L67.85 41.11L75.91 43.27L79.57 38.38L82.38 40L79.98 45.62L85.88 51.52L91.5 49.12L93.12 51.93L88.23 55.59ZM56.5 66A9 9 0 1 0 74.5 66A9 9 0 1 0 56.5 66Z" fill="#000000" fill-opacity="0.35" fill-rule="evenodd"/>
+<path d="M88.89 61.65L94.96 62.38L94.96 65.62L88.89 66.35L86.73 74.41L91.62 78.07L90 80.88L84.38 78.48L78.48 84.38L80.88 90L78.07 91.62L74.41 86.73L66.35 88.89L65.62 94.96L62.38 94.96L61.65 88.89L53.59 86.73L49.93 91.62L47.12 90L49.52 84.38L43.62 78.48L38 80.88L36.38 78.07L41.27 74.41L39.11 66.35L33.04 65.62L33.04 62.38L39.11 61.65L41.27 53.59L36.38 49.93L38 47.12L43.62 49.52L49.52 43.62L47.12 38L49.93 36.38L53.59 41.27L61.65 39.11L62.38 33.04L65.62 33.04L66.35 39.11L74.41 41.27L78.07 36.38L80.88 38L78.48 43.62L84.38 49.52L90 47.12L91.62 49.93L86.73 53.59ZM55 64A9 9 0 1 0 73 64A9 9 0 1 0 55 64Z" fill="url(#gearG)" fill-rule="evenodd" stroke="#8A6A2E" stroke-width="0.8"/>
+<circle cx="64" cy="64" r="18" fill="none" stroke="#8A6A2E" stroke-width="1.2"/>
+<g transform="rotate(38 64 64) translate(0 5)">
+<rect x="62.3" y="48" width="6.4" height="54" rx="2.5" fill="#000000" fill-opacity="0.35"/>
+<rect x="60.8" y="46" width="6.4" height="54" rx="2.5" fill="#5A3418" stroke="#2A1408" stroke-width="0.8"/>
+<rect x="60.8" y="86" width="6.4" height="3" fill="#C9A55A"/>
+<rect x="60.8" y="92" width="6.4" height="3" fill="#C9A55A"/>
+<path d="M45.5 34H81.5L87.5 41L81.5 48H45.5Z" fill="#000000" fill-opacity="0.35"/>
+<path d="M44 32H80L86 39L80 46H44Z" fill="url(#steelH)" stroke="#3A4256" stroke-width="1" stroke-linejoin="round"/>
+<path d="M46 34H79" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.8" stroke-linecap="round"/>
+<rect x="59" y="32" width="10" height="14" fill="#8A93A8" fill-opacity="0.6"/>
+</g>
+</g>
+<circle cx="64" cy="64" r="51" fill="none" stroke="#8A6A2E" stroke-width="1.2"/>
+<path d="M18 46A49 49 0 0 1 90 18" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-opacity="0.35"/>
+</svg>

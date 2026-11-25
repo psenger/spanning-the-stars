@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+<!-- Concord Contract back: charter with a red wax seal -->
+<defs>
+<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13204A"/><stop offset="1" stop-color="#070B1C"/></linearGradient>
+<linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D58A"/><stop offset="0.5" stop-color="#C9A55A"/><stop offset="1" stop-color="#8A6A2E"/></linearGradient>
+<linearGradient id="sheet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1C2A5C"/><stop offset="1" stop-color="#0E1636"/></linearGradient>
+<radialGradient id="wax" cx="0.4" cy="0.36" r="0.75"><stop offset="0" stop-color="#D8545A"/><stop offset="0.5" stop-color="#9A1F2C"/><stop offset="1" stop-color="#4E0A14"/></radialGradient>
+<radialGradient id="shade" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1"><stop offset="0" stop-color="#000000"/><stop offset="0.6" stop-color="#000000" stop-opacity="0.5"/><stop offset="1" stop-color="#000000" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="0" y="0" width="200" height="300" rx="14" fill="#0B1026"/>
+<rect x="6" y="6" width="188" height="288" rx="9" fill="url(#body)"/>
+<!-- Soft shadow under the charter sheet -->
+<rect x="29" y="34" width="150" height="232" rx="3" fill="#000000" fill-opacity="0.18"/>
+<rect x="30.5" y="35.5" width="147" height="229" rx="2" fill="#000000" fill-opacity="0.2"/>
+<!-- Charter sheet -->
+<path d="M26 30H174V250L162 262H26Z" fill="url(#sheet)" stroke="#C9A55A" stroke-width="1"/>
+<path d="M174 250L162 250L162 262Z" fill="#8A6A2E" fill-opacity="0.8"/>
+<path d="M27 260V31H173" fill="none" stroke="#FFF1C4" stroke-width="0.6" stroke-opacity="0.45"/>
+<rect x="31" y="35" width="138" height="222" fill="none" stroke="#C9A55A" stroke-width="0.5" stroke-opacity="0.5"/>
+<path d="M-354 30L-122 262M554 30L322 262M-342 30L-110 262M542 30L310 262M-330 30L-98 262M530 30L298 262M-318 30L-86 262M518 30L286 262M-306 30L-74 262M506 30L274 262M-294 30L-62 262M494 30L262 262M-282 30L-50 262M482 30L250 262M-270 30L-38 262M470 30L238 262M-258 30L-26 262M458 30L226 262M-246 30L-14 262M446 30L214 262M-234 30L-2 262M434 30L202 262M-222 30L10 262M422 30L190 262M-210 30L22 262M410 30L178 262M-198 30L34 262M398 30L166 262M-186 30L46 262M386 30L154 262M-174 30L58 262M374 30L142 262M-162 30L70 262M362 30L130 262M-150 30L82 262M350 30L118 262M-138 30L94 262M338 30L106 262M-126 30L106 262M326 30L94 262M-114 30L118 262M314 30L82 262M-102 30L130 262M302 30L70 262M-90 30L142 262M290 30L58 262M-78 30L154 262M278 30L46 262M-66 30L166 262M266 30L34 262M-54 30L178 262M254 30L22 262M-42 30L190 262M242 30L10 262M-30 30L202 262M230 30L-2 262M-18 30L214 262M218 30L-14 262M-6 30L226 262M206 30L-26 262M6 30L238 262M194 30L-38 262M18 30L250 262M182 30L-50 262M30 30L262 262M170 30L-62 262M42 30L274 262M158 30L-74 262M54 30L286 262M146 30L-86 262M66 30L298 262M134 30L-98 262M78 30L310 262M122 30L-110 262M90 30L322 262M110 30L-122 262M102 30L334 262M98 30L-134 262M114 30L346 262M86 30L-146 262M126 30L358 262M74 30L-158 262M138 30L370 262M62 30L-170 262M150 30L382 262M50 30L-182 262M162 30L394 262M38 30L-194 262M174 30L406 262M26 30L-206 262M186 30L418 262M14 30L-218 262M198 30L430 262M2 30L-230 262M210 30L442 262M-10 30L-242 262M222 30L454 262M-22 30L-254 262M234 30L466 262M-34 30L-266 262M246 30L478 262M-46 30L-278 262M258 30L490 262M-58 30L-290 262M270 30L502 262M-70 30L-302 262M282 30L514 262M-82 30L-314 262M294 30L526 262M-94 30L-326 262M306 30L538 262M-106 30L-338 262M318 30L550 262M-118 30L-350 262M330 30L562 262M-130 30L-362 262M342 30L574 262M-142 30L-374 262M354 30L586 262M-154 30L-386 262M366 30L598 262M-166 30L-398 262M378 30L610 262M-178 30L-410 262M390 30L622 262M-190 30L-422 262M402 30L634 262M-202 30L-434 262" fill="none" stroke="#C9A55A" stroke-width="0.4" stroke-opacity="0.05"/>
+<path d="M54 74Q100 40 146 74" fill="none" stroke="#C9A55A" stroke-width="1.2"/>
+<path d="M62 74Q100 48 138 74" fill="none" stroke="#C9A55A" stroke-width="0.5" stroke-opacity="0.6"/>
+<polygon points="100,49 101.24,55.01 106.36,51.64 102.99,56.76 109,58 102.99,59.24 106.36,64.36 101.24,60.99 100,67 98.76,60.99 93.64,64.36 97.01,59.24 91,58 97.01,56.76 93.64,51.64 98.76,55.01" fill="url(#brass)" stroke="#8A6A2E" stroke-width="0.6" stroke-linejoin="round"/>
+<polygon points="103.95,54.05 101.8,58 103.95,61.95 100,59.8 96.05,61.95 98.2,58 96.05,54.05 100,56.2" fill="#F1D58A" fill-opacity="0.9"/>
+<path d="M48 82H152" stroke="#C9A55A" stroke-width="0.9"/>
+<path d="M50 96H150M50 105H150M50 114H120M50 123H150M50 132H150M50 141H120M50 150H150M50 159H150" stroke="#F1D58A" stroke-width="1.4" stroke-opacity="0.22" stroke-linecap="round"/>
+<!-- Deep red Concord wax seal with a drip edge -->
+<circle r="1" fill="url(#shade)" fill-opacity="0.55" transform="translate(102 205) scale(33 31)"/>
+<path d="M125.68 198.34Q126.21 200 126.31 201.74Q126.42 203.48 125.6 205.06Q124.79 206.64 124.35 208.27Q123.91 209.91 123.58 211.66Q123.25 213.42 122.04 214.7Q120.83 215.98 119.39 216.96Q117.95 217.95 116.7 219.05Q115.46 220.14 115.05 222.76Q114.65 225.37 113.08 226.57Q111.51 227.78 109.22 226.83Q106.93 225.88 105.46 228.09Q103.99 230.31 102 232.34Q100 234.37 98.13 231.39Q96.26 228.4 94.52 227.69Q92.77 226.99 90.25 228.31Q87.72 229.64 86.76 227.12Q85.8 224.6 85.26 222.26Q84.71 219.92 82.57 219.74Q80.43 219.57 78.18 219.02Q75.92 218.48 76.14 216.06Q76.36 213.65 76.64 211.61Q76.91 209.56 75.95 208.13Q74.98 206.7 74.37 205.08Q73.75 203.46 73.89 201.73Q74.02 200 74.64 198.37Q75.26 196.74 74.74 194.92Q74.23 193.09 75.09 191.57Q75.96 190.04 77.02 188.69Q78.08 187.34 78.8 185.81Q79.52 184.29 80.13 182.51Q80.73 180.73 82.34 179.91Q83.95 179.08 85.63 178.56Q87.32 178.04 88.75 177.16Q90.17 176.27 91.59 175.09Q93.01 173.9 94.81 174.11Q96.62 174.31 98.31 174.69Q100 175.07 101.71 174.57Q103.41 174.07 105.13 174.26Q106.85 174.44 108.12 175.89Q109.39 177.33 110.99 177.76Q112.59 178.19 114.63 178.24Q116.66 178.29 117.72 179.76Q118.77 181.23 119.14 183.13Q119.5 185.04 120.92 186.07Q122.34 187.1 123.54 188.43Q124.73 189.76 124.83 191.54Q124.94 193.32 125.04 195Q125.15 196.69 125.68 198.34Z" fill="url(#wax)" stroke="#3A0610" stroke-width="0.6"/>
+<circle cx="100" cy="200" r="19" fill="#7A1420" fill-opacity="0.55"/>
+<circle cx="100" cy="200" r="19" fill="none" stroke="#3A0610" stroke-width="1.4"/>
+<circle cx="100" cy="200" r="19" fill="none" stroke="#F08A8A" stroke-width="0.7" stroke-opacity="0.5" transform="translate(-0.8 -0.8)"/>
+<circle cx="100" cy="200" r="15.5" fill="none" stroke="#3A0610" stroke-width="0.6" stroke-dasharray="1.2 1.8"/>
+<polygon points="100.8,189.3 102.41,196.92 108.93,192.67 104.68,199.19 112.3,200.8 104.68,202.41 108.93,208.93 102.41,204.68 100.8,212.3 99.19,204.68 92.67,208.93 96.92,202.41 89.3,200.8 96.92,199.19 92.67,192.67 99.19,196.92" fill="#3A0610"/>
+<polygon points="100,188.5 101.61,196.12 108.13,191.87 103.88,198.39 111.5,200 103.88,201.61 108.13,208.13 101.61,203.88 100,211.5 98.39,203.88 91.87,208.13 96.12,201.61 88.5,200 96.12,198.39 91.87,191.87 98.39,196.12" fill="#B8323E" stroke="#F4A0A0" stroke-width="0.5" stroke-opacity="0.8"/>
+<circle cx="100" cy="200" r="2" fill="#3A0610"/>
+<path d="M83 188A21 21 0 0 1 96 180" fill="none" stroke="#FFD6D0" stroke-width="2" stroke-linecap="round" stroke-opacity="0.55"/>
+<!-- Concord brass hairlines and corner ornaments -->
+<rect x="9" y="9" width="182" height="282" rx="7" fill="none" stroke="#C9A55A" stroke-width="1.5"/>
+<rect x="12.5" y="12.5" width="175" height="275" rx="5" fill="none" stroke="#F1D58A" stroke-width="0.6" stroke-opacity="0.35"/>
+<g transform="translate(9 9)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(191 9) scale(-1 1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(9 291) scale(1 -1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<g transform="translate(191 291) scale(-1 -1)"><path d="M5 30V10Q5 5 10 5H30" fill="none" stroke="#C9A55A" stroke-width="1.2" stroke-linecap="round"/><polygon points="11,7.5 14.5,11 11,14.5 7.5,11" fill="#F1D58A"/><circle cx="5" cy="34" r="1" fill="#C9A55A"/><circle cx="34" cy="5" r="1" fill="#C9A55A"/></g>
+<polygon points="100,5.5 103.5,9 100,12.5 96.5,9" fill="#F1D58A"/>
+<polygon points="100,287.5 103.5,291 100,294.5 96.5,291" fill="#F1D58A"/>
+</svg>
