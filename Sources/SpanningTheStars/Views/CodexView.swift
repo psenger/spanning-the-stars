@@ -9,7 +9,7 @@ struct CodexView: View {
     }
 
     @Environment(\.dismiss) private var dismiss
-    @State private var section: Section = .rules
+    @State private var section: Section = .gameplay
     private let blocks = CodexBlock.parse(CodexText.load())
 
     var body: some View {
@@ -41,10 +41,7 @@ struct CodexView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     switch section {
                     case .gameplay:
-                        CodexBlockView(block: .heading(level: 1, text: section.rawValue))
-                        ForEach(Array(HelpReference.gameplay.enumerated()), id: \.offset) { _, step in
-                            CodexBlockView(block: .paragraph(step))
-                        }
+                        CodexGameplayView()
                     case .reference:
                         CodexReferenceView()
                     case .rules:
@@ -81,6 +78,7 @@ private struct CodexBlockView: View {
                 .font(.system(size: level == 1 ? 26 : level == 2 ? 19 : 16, weight: .semibold, design: .serif))
                 .foregroundStyle(level == 1 ? Palette.brass : Palette.text)
                 .padding(.top, level == 1 ? 0 : 12)
+                .accessibilityAddTraits(.isHeader)
         case .paragraph(let text):
             Text(inline(text))
                 .font(.system(size: 14))
@@ -129,6 +127,65 @@ private struct CodexBlockView: View {
             .padding(.horizontal, 12).padding(.vertical, 6)
             .frame(maxWidth: .infinity, alignment: .center)
             .background(header ? Palette.brass.opacity(0.1) : Color.clear)
+    }
+}
+
+private struct CodexGameplayView: View {
+    typealias Example = HelpReference.FirstLane
+
+    var body: some View {
+        CodexBlockView(block: .heading(level: 1, text: "How to play"))
+        CodexBlockView(block: .paragraph(HelpReference.gameplayIntro))
+        ForEach(HelpReference.gameplay, id: \.id) { section in
+            CodexBlockView(block: .heading(level: 2, text: section.title))
+            ForEach(section.steps, id: \.self) { step in
+                CodexBlockView(block: .paragraph(step))
+            }
+            if section.id == "turn" { laneExample }
+        }
+    }
+
+    private var laneExample: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            CodexBlockView(block: .heading(level: 2, text: Example.title))
+            HStack(spacing: 18) {
+                VStack(spacing: 4) {
+                    HStack(spacing: 6) {
+                        ForEach(0..<Example.cost, id: \.self) { _ in
+                            if let art = ArtAsset(rawValue: Example.cardArt) {
+                                ArtImage(art)
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 60)
+                            }
+                        }
+                    }
+                    Text("\(Example.cost) × \(Example.cardName)")
+                        .font(.caption)
+                        .foregroundStyle(Palette.text)
+                }
+                Image(systemName: "arrow.right")
+                    .foregroundStyle(Palette.dimText)
+                HStack(spacing: 6) {
+                    Text(Example.from)
+                    ForEach(0..<Example.cost, id: \.self) { _ in
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(Palette.hex(0xE0443E))
+                            .frame(width: 22, height: 11)
+                    }
+                    Text(Example.to)
+                }
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(Palette.text)
+            }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Example.illustrationDescription)
+            ForEach(Array(Example.steps.enumerated()), id: \.offset) { index, step in
+                CodexBlockView(block: .item(marker: "\(index + 1).", text: step))
+            }
+        }
+        .padding(.horizontal, 16).padding(.bottom, 14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Palette.brass.opacity(0.08), in: RoundedRectangle(cornerRadius: 12))
     }
 }
 

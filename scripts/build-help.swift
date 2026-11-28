@@ -27,7 +27,7 @@ struct BuildHelp {
             "CFBundleName": title,
             "CFBundlePackageType": "BNDL",
             "CFBundleShortVersionString": "1",
-            "CFBundleVersion": "1",
+            "CFBundleVersion": "2",
             "HPDBookAccessPath": "index.html",
             "HPDBookIndexPath": "SpanningTheStars.helpindex",
             "HPDBookTitle": title,
@@ -48,12 +48,11 @@ struct BuildHelp {
             try saveSymbol(stat, at: artwork)
         }
 
-        let steps = HelpReference.gameplay.map { "<li>\(escape($0))</li>" }.joined(separator: "\n")
         let reference = HelpReference.cards.map { referenceRow(name: $0.title, detail: $0.detail, image: $0.art + ".svg") }
         let stats = HelpHouseStat.allCases.map { referenceRow(name: $0.title, detail: $0.detail, image: $0.symbol + ".png") }
         let rules = try String(contentsOf: source.appending(path: "RULES.md"), encoding: .utf8)
 
-        try page("How to play", body: "<h1>How to play</h1><ol class=\"steps\">\(steps)</ol>", isIndex: true)
+        try page("How to play", body: gameplayBody(), isIndex: true)
             .write(to: english.appending(path: "index.html"), atomically: true, encoding: .utf8)
         try page("Cards and House symbols", body: """
             <h1>Cards and award</h1><div class="cards">\(reference.joined(separator: "\n"))</div>
@@ -61,6 +60,48 @@ struct BuildHelp {
             """).write(to: english.appending(path: "reference.html"), atomically: true, encoding: .utf8)
         try page("Rules", body: renderRules(CodexBlock.parse(rules)))
             .write(to: english.appending(path: "rules.html"), atomically: true, encoding: .utf8)
+    }
+
+    private static func gameplayBody() -> String {
+        typealias Example = HelpReference.FirstLane
+        var links: [String] = []
+        var sections: [String] = []
+        for section in HelpReference.gameplay {
+            links.append("<li><a href=\"#\(section.id)\">\(escape(section.title))</a></li>")
+            let steps = section.steps.map { "<p>\(inline($0))</p>" }.joined(separator: "\n")
+            sections.append("""
+                <section id="\(section.id)"><h2>\(escape(section.title))</h2>
+                \(steps)
+                </section>
+                """)
+            if section.id == "turn" {
+                links.append("<li><a href=\"#\(Example.anchor)\">Lane example</a></li>")
+                sections.append(laneExample())
+            }
+        }
+        return """
+            <h1>How to play</h1>
+            <p>\(escape(HelpReference.gameplayIntro))</p>
+            <ul class="guide-links">\(links.joined(separator: "\n"))</ul>
+            \(sections.joined(separator: "\n"))
+            """
+    }
+
+    private static func laneExample() -> String {
+        typealias Example = HelpReference.FirstLane
+        let cards = String(repeating: "<img src=\"../Artwork/\(Example.cardArt).svg\" alt=\"\">", count: Example.cost)
+        let slots = String(repeating: "<span class=\"lane-slot\"></span>", count: Example.cost)
+        let steps = Example.steps.map { "<li>\(inline($0))</li>" }.joined(separator: "\n")
+        return """
+            <section class="lane-example" id="\(Example.anchor)">
+              <h2>\(escape(Example.title))</h2>
+              <figure class="lane-figure" aria-label="\(escape(Example.illustrationDescription))">
+                <div class="lane-payment" aria-hidden="true">\(cards)<span>\(Example.cost) × \(escape(Example.cardName))</span></div>
+                <div class="lane-path" aria-hidden="true"><span>→</span>\(escape(Example.from)) \(slots) \(escape(Example.to))</div>
+              </figure>
+              <ol class="steps">\(steps)</ol>
+            </section>
+            """
     }
 
     @MainActor
@@ -99,6 +140,13 @@ struct BuildHelp {
             h1, h2, h3 { line-height: 1.2; }
             h2 { margin-top: 1.6em; }
             .steps li { margin-bottom: .65em; }
+            .guide-links { display: flex; flex-wrap: wrap; gap: 4px 16px; list-style: none; padding: 0; }
+            .lane-example { margin: 24px 0; padding: 14px 18px; border: 1px solid GrayText; border-radius: 10px; }
+            .lane-example h2 { margin-top: 0; }
+            .lane-figure { margin: 12px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+            .lane-payment, .lane-path { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+            .lane-payment img { width: 39px; height: 59px; object-fit: contain; }
+            .lane-slot { display: inline-block; background: #e0443e; border-radius: 4px; width: 22px; height: 11px; }
             .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
             .reference { display: flex; align-items: flex-start; gap: 12px; break-inside: avoid; }
             .reference h3 { font-size: 1em; margin: 0 0 4px; }
