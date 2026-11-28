@@ -67,7 +67,7 @@ struct CardButton<Label: View>: View {
     @State private var hovering = false
 
     var body: some View {
-        Button(action: action) {
+        GameButton(help: help, action: action) {
             label
                 .shadow(color: hovering && enabled ? Palette.brass.opacity(0.8) : .black.opacity(0.4),
                         radius: hovering && enabled ? 8 : 3, y: 2)
@@ -77,7 +77,6 @@ struct CardButton<Label: View>: View {
         }
         .buttonStyle(.plain)
         .disabled(!enabled)
-        .help(help)
         .onHover { h in withAnimation(.easeOut(duration: 0.12)) { hovering = h } }
     }
 }

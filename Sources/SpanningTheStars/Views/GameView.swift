@@ -17,6 +17,7 @@ struct GameView: View {
     @State private var options = TurnOptionsCache()
     @State private var reviews = FinalReviewCache()
     @State private var claimLane: Int?
+    @State private var hoveredContract: Int?
     /// The error showing when the claim sheet opened; the sheet shows only errors raised after that.
     @State private var errorBeforeClaim: RuleError?
     @State private var showCodex = false
@@ -47,8 +48,11 @@ struct GameView: View {
         }
         .sheet(isPresented: $showCodex) { CodexView() }
         .onChange(of: session.screen) { _, screen in
+            hoveredContract = nil
             if screen != .playing { claimLane = nil }
         }
+        .onChange(of: state.current) { hoveredContract = nil }
+        .onChange(of: state.phase) { hoveredContract = nil }
     }
 
     private func board(state: GameState, map: GalaxyMap) -> some View {
@@ -59,6 +63,9 @@ struct GameView: View {
         let secrets = Secrets(screen: session.screen, player: player)
         let pick = playing ? ContractPickView.pick(for: state.phase) : nil
 
+        let endpoints = Self.heldContractSystems(
+            hoveredContract, player: player, map: map, visible: secrets.shown && claimLane == nil)
+
         return VStack(spacing: GameLayout.gap) {
             StatusBar(state: state, onCodex: { showCodex = true })
                 .frame(height: GameLayout.statusHeight)
@@ -66,16 +73,18 @@ struct GameView: View {
             Group {
                 if let pick {
                     ContractPickView(state: state, map: map, offered: pick.offered, minimum: pick.minimum,
-                                     perform: session.perform)
+                                     perform: session.perform, heldHighlight: endpoints)
                         .id(pick.offered)
                 } else {
                     HStack(alignment: .top, spacing: GameLayout.gap) {
                         ZStack(alignment: .top) {
                             StarMapView(map: map, state: state, hazards: state.config.frontierHazards,
-                                        highlight: claimLane.map { [$0] } ?? [],
+                                        highlight: claimLane.map { [$0] } ?? [], highlightSystems: endpoints,
                                         onSelectLane: { id in
                                             if playing {
                                                 errorBeforeClaim = session.lastError
+                                                hoveredContract = nil
+                                                InteractionSound.selection.play()
                                                 claimLane = id
                                             }
                                         })
@@ -107,7 +116,8 @@ struct GameView: View {
             HStack(alignment: .top, spacing: GameLayout.gap) {
                 HandTray(hand: secrets.hand, hidden: !secrets.shown)
                     .frame(maxWidth: .infinity)
-                ContractsPanel(player: player, map: map, hidden: !secrets.shown)
+                ContractsPanel(player: player, map: map, hidden: !secrets.shown,
+                               hoveredContract: $hoveredContract)
                     .frame(width: GameLayout.sideWidth)
             }
             .frame(height: GameLayout.bottomHeight)
@@ -131,6 +141,12 @@ struct GameView: View {
 }
 
 extension GameView {
+    static func heldContractSystems(_ id: Int?, player: PlayerState, map: GalaxyMap, visible: Bool) -> Set<String> {
+        guard visible, let id, player.contracts.contains(id), map.contracts.indices.contains(id) else { return [] }
+        let contract = map.contracts[id]
+        return [contract.a, contract.b]
+    }
+
     /// Banner text for a bot's turn, for example "House Ashkar (Navigator) is plotting its move".
     /// Nil for a human.
     static func botBanner(_ player: PlayerState) -> String? {
@@ -265,7 +281,7 @@ private struct TurnPanel: View {
                     .foregroundStyle(Palette.dimText)
                     .fixedSize(horizontal: false, vertical: true)
                 if options.mustPass {
-                    Button("Hold position") { perform(.pass) }
+                    GameButton("Hold position", help: "End your turn when no other action is available") { perform(.pass) }
                         .buttonStyle(BrassButtonStyle())
                         .accessibilityLabel("Hold position")
                         .disabled(!enabled)

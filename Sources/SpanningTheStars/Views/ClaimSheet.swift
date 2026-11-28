@@ -76,7 +76,7 @@ struct ClaimSheet: View {
                 .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Palette.hex(0xE0443E, opacity: 0.5), lineWidth: 1))
             HStack {
                 Spacer()
-                Button("Close", action: close)
+                GameButton("Close", help: "Return to the map", action: close)
                     .buttonStyle(BrassButtonStyle(prominent: false))
                     .accessibilityLabel("Close")
                     .keyboardShortcut(.cancelAction)
@@ -108,11 +108,12 @@ struct ClaimSheet: View {
             }
             HStack(spacing: 10) {
                 Spacer()
-                Button("Cancel", action: close)
+                GameButton("Cancel", help: "Return to the map without anchoring", action: close)
                     .buttonStyle(BrassButtonStyle(prominent: false))
                     .accessibilityLabel("Cancel")
                     .keyboardShortcut(.cancelAction)
-                Button("Anchor lane (+\(lanePoints(lane.length)))") {
+                GameButton("Anchor lane (+\(lanePoints(lane.length)))",
+                           help: "Spend the chosen cards and anchor this lane") {
                     perform(.claim(laneID: lane.id, payment: payments[pick]))
                 }
                 .buttonStyle(BrassButtonStyle())
@@ -184,7 +185,7 @@ private struct PaymentRow: View {
     let select: () -> Void
 
     var body: some View {
-        Button(action: select) {
+        GameButton(help: "Choose these cards to pay for the lane", sound: selected ? nil : .selection, action: select) {
             HStack(spacing: 10) {
                 Image(systemName: selected ? "largecircle.fill.circle" : "circle")
                     .font(.system(size: 14))

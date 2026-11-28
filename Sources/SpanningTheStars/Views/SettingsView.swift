@@ -14,12 +14,14 @@ struct SettingsView: View {
         Form {
             Section {
                 Toggle("Diagnostic logging", isOn: $diagnosticLogging)
+                    .help("Record moves in future games for troubleshooting")
+                    .onChange(of: diagnosticLogging) { InteractionSound.selection.play() }
                 Text("Records every move of a game to a replay file, so a problem can be reproduced exactly. "
                      + "Takes effect from the next new, loaded or continued game. The newest 20 files are kept.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
-                Button("Show logs in Finder", action: showLogs)
+                GameButton("Show logs in Finder", help: "Open the diagnostic log folder", action: showLogs)
             }
         }
         .formStyle(.grouped)

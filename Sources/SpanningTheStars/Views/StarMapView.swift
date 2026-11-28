@@ -17,10 +17,10 @@ struct StarMapView: View {
     var highlight: Set<Int> = []
     /// Star System ids ringed in brass, for example the ends of the contracts being chosen.
     var highlightSystems: Set<String> = []
-    var onSelectLane: (Int) -> Void = { _ in }
+    var onSelectLane: ((Int) -> Void)?
 
     @State private var layoutHolder = LayoutHolder()
-    @State private var hovered: Int?
+    @State private var hovered: MapHover?
     @State private var pointer = HoverPoint()
 
     var body: some View {
@@ -33,8 +33,9 @@ struct StarMapView: View {
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
                     .clipped()
-                // A light scrim keeps lanes the dominant layer over bright nebula art.
-                Color.black.opacity(0.22)
+                    .opacity(0.68)
+                // Scrim only the artwork so lane colors and labels retain their contrast.
+                Color.black.opacity(0.16)
                 mapContent(layout: layout, scale: s, size: size)
             }
             .frame(width: geo.size.width, height: geo.size.height)
@@ -49,7 +50,7 @@ struct StarMapView: View {
             SwiftUI.Canvas { ctx, _ in
                 ctx.scaleBy(x: s, y: s)
                 LaneRenderer(map: map, state: state, hazards: hazards, layout: layout,
-                             highlight: highlight, hovered: hovered).draw(in: &ctx)
+                             highlight: highlight, hovered: hoveredLane).draw(in: &ctx)
             }
             .frame(width: size.width, height: size.height)
 
@@ -82,9 +83,20 @@ struct StarMapView: View {
                 }
             }
 
-            if let id = hovered {
-                FollowingTooltip(pointer: pointer, bounds: size,
-                                 tooltip: LaneTooltip(map: map, state: state, lane: map.lane(id), hazards: hazards))
+            if let hovered {
+                FollowingTooltip(pointer: pointer, bounds: size) {
+                    switch hovered {
+                    case .lane(let id):
+                        LaneTooltip(map: map, state: state, lane: map.lane(id),
+                                    hazards: hazards, opensDetails: onSelectLane != nil)
+                    case .system(let id):
+                        let system = map.system(id)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(system.name).font(.system(size: 14, weight: .semibold)).foregroundStyle(Palette.text)
+                            Text("Star System · \(system.region.displayName)").foregroundStyle(Palette.dimText)
+                        }
+                    }
+                }
             }
         }
         .frame(width: size.width, height: size.height, alignment: .topLeading)
@@ -94,15 +106,36 @@ struct StarMapView: View {
             switch phase {
             case .active(let p):
                 pointer.location = p
-                let near = layout.lane(near: CGPoint(x: p.x / s, y: p.y / s))
-                if near != hovered { hovered = near }
+                let target = hoverTarget(at: CGPoint(x: p.x / s, y: p.y / s), layout: layout)
+                if target != hovered { hovered = target }
             case .ended:
                 if hovered != nil { hovered = nil }
             }
         }
         .onTapGesture { p in
-            if let id = layout.lane(near: CGPoint(x: p.x / s, y: p.y / s)) { onSelectLane(id) }
+            guard let onSelectLane,
+                  case .lane(let id) = hoverTarget(at: CGPoint(x: p.x / s, y: p.y / s), layout: layout) else { return }
+            onSelectLane(id)
         }
+    }
+
+    private var hoveredLane: Int? {
+        if case .lane(let id) = hovered { return id }
+        return nil
+    }
+
+    private func hoverTarget(at point: CGPoint, layout: StarMapLayout) -> MapHover? {
+        let radius = StarMapLayout.starSize / 2
+        if let system = map.systems.first(where: { system in
+            hypot(point.x - system.x, point.y - system.y) <= radius
+        }) {
+            return .system(system.id)
+        }
+        if let id = layout.lane(near: point) { return .lane(id) }
+        if let system = map.systems.first(where: { layout.labels[$0.id]?.rect.contains(point) == true }) {
+            return .system(system.id)
+        }
+        return nil
     }
 
     private func hazardGlyph(_ lane: Lane, layout: StarMapLayout, scale s: CGFloat) -> some View {
@@ -119,6 +152,22 @@ struct StarMapView: View {
 }
 
 // MARK: - Labels and tooltip
+
+private enum MapHover: Equatable {
+    case lane(Int)
+    case system(String)
+}
+
+private extension Region {
+    var displayName: String {
+        switch self {
+        case .coreWorlds: "Core Worlds"
+        case .shatteredRim: "Shattered Rim"
+        case .veilNebula: "Veil Nebula"
+        case .emberBelt: "Ember Belt"
+        }
+    }
+}
 
 private struct SystemLabel: View {
     let text: String
@@ -158,14 +207,21 @@ private struct SystemLabel: View {
 }
 
 /// Places the tooltip beside the pointer, flipping left or up near the map edges.
-private struct FollowingTooltip: View {
+private struct FollowingTooltip<Content: View>: View {
     let pointer: HoverPoint
     let bounds: CGSize
-    let tooltip: LaneTooltip
+    @ViewBuilder var tooltip: () -> Content
 
     var body: some View {
         let pt = pointer.location
-        tooltip
+        let bounds = self.bounds
+        return tooltip()
+            .font(.system(size: 12))
+            .fixedSize()
+            .padding(.horizontal, 10).padding(.vertical, 8)
+            .background(Palette.hex(0x0B1024, opacity: 0.94), in: RoundedRectangle(cornerRadius: 8))
+            .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Palette.brass.opacity(0.5), lineWidth: 1))
+            .shadow(color: .black.opacity(0.6), radius: 6, y: 2)
             .alignmentGuide(.leading) { d in
                 pt.x + 16 + d.width > bounds.width ? d.width + 12 - pt.x : -(pt.x + 16)
             }
@@ -181,6 +237,7 @@ private struct LaneTooltip: View {
     let state: GameState
     let lane: Lane
     let hazards: Bool
+    let opensDetails: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -211,13 +268,11 @@ private struct LaneTooltip: View {
                 Text("Closed: its twin is anchored")
                     .foregroundStyle(Palette.dimText)
             }
+            if opensDetails {
+                Text("Click for lane details and payment options")
+                    .foregroundStyle(Palette.dimText)
+            }
         }
-        .font(.system(size: 12))
-        .fixedSize()
-        .padding(.horizontal, 10).padding(.vertical, 8)
-        .background(Palette.hex(0x0B1024, opacity: 0.94), in: RoundedRectangle(cornerRadius: 8))
-        .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Palette.brass.opacity(0.5), lineWidth: 1))
-        .shadow(color: .black.opacity(0.6), radius: 6, y: 2)
     }
 }
 

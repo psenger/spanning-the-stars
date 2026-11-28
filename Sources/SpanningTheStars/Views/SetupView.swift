@@ -49,16 +49,18 @@ struct SetupView: View {
                         }
                     }
                     .toggleStyle(.switch)
+                    .help("Enable Spectrum and Gravity Well lane rules")
+                    .onChange(of: hazards) { InteractionSound.selection.play() }
                     .tint(Palette.brass)
                     .panel(padding: 16)
                     .frame(maxWidth: SetupView.columnWidth)
 
                     HStack(spacing: 14) {
-                        Button("Back", action: onBack)
+                        GameButton("Back", help: "Leave game setup", action: onBack)
                             .buttonStyle(TitleButtonStyle(prominent: false))
                             .accessibilityLabel("Back")
                             .keyboardShortcut(.cancelAction)
-                        Button("Begin the Charter (\(houses.count) Houses)") {
+                        GameButton("Begin the Charter (\(houses.count) Houses)", help: "Start a game with these Houses") {
                             onBegin(houses, hazards, SetupView.kinds(for: houses, choices: choices))
                         }
                             .buttonStyle(TitleButtonStyle(prominent: true))
@@ -93,7 +95,11 @@ private struct HouseToggleRow: View {
     let locked: Bool
 
     var body: some View {
-        Button { if !locked { isOn.toggle() } } label: {
+        GameButton(help: locked ? "A Charter needs at least 2 Houses"
+                   : isOn ? "Remove \(house.displayName) from the Charter" : "Add \(house.displayName) to the Charter",
+                   sound: locked ? nil : .selection) {
+            if !locked { isOn.toggle() }
+        } label: {
             HStack(spacing: 14) {
                 ArtImage(.house(house))
                     .frame(width: 46, height: 46)
@@ -129,7 +135,6 @@ private struct HouseToggleRow: View {
             .contentShape(RoundedRectangle(cornerRadius: 12))
         }
         .buttonStyle(.plain)
-        .help(locked ? "A Charter needs at least 2 Houses" : "")
         .accessibilityLabel(house.displayName)
         .accessibilityValue(isOn ? "In the Charter" : "Not in the Charter")
         .overlay(alignment: .trailing) {
@@ -156,7 +161,12 @@ private struct HouseToggleRow: View {
     /// The picker selects a row of `kindOptions` (`PlayerKind` is not Hashable).
     private var option: Binding<Int> {
         Binding(get: { SetupView.kindOptions.firstIndex { $0.kind == kind } ?? 0 },
-                set: { kind = SetupView.kindOptions[$0].kind })
+                set: { index in
+                    let next = SetupView.kindOptions[index].kind
+                    guard next != kind else { return }
+                    kind = next
+                    InteractionSound.selection.play()
+                })
     }
 }
 

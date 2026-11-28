@@ -53,10 +53,10 @@ private struct SaveList: View {
             VStack(spacing: 0) {
                 ForEach(saves) { save in
                     HStack {
-                        Button { pick(save) } label: { SaveRow(save: save).padding(.vertical, 6) }
+                        GameButton(help: "Select \(save.name)", sound: .selection) { pick(save) } label: { SaveRow(save: save).padding(.vertical, 6) }
                             .buttonStyle(.plain)
                             .disabled(disabled)
-                        Button { delete(save) } label: {
+                        GameButton(help: "Delete the saved game \(save.name)") { delete(save) } label: {
                             Image(systemName: "trash").frame(width: 32, height: 32).contentShape(Rectangle())
                         }
                         .buttonStyle(.borderless)
@@ -80,8 +80,11 @@ private struct DeleteConfirmation: ViewModifier {
         content.alert(deleting.map { SaveText.deletePrompt($0.name) } ?? "",
                       isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }),
                       presenting: deleting) { target in
-            Button(SaveText.delete, role: .destructive) { delete(target) }
-            Button(SaveText.cancel, role: .cancel) {}
+            Button(SaveText.delete, role: .destructive) {
+                InteractionSound.activate.play()
+                delete(target)
+            }
+            Button(SaveText.cancel, role: .cancel) { InteractionSound.activate.play() }
         } message: { _ in
             Text(SaveText.deleteWarning)
         }
@@ -137,9 +140,10 @@ struct SaveGameSheet: View {
                 SaveList(saves: saves, disabled: nameIsBlank, pick: { replacing = $0 }, delete: { deleting = $0 })
             }
             HStack {
-                Button(SaveText.cancel) { dismiss() }.keyboardShortcut(.cancelAction)
+                GameButton(SaveText.cancel, help: "Close without saving") { dismiss() }
+                    .keyboardShortcut(.cancelAction)
                 Spacer()
-                Button(SaveText.save) { save() }
+                GameButton(SaveText.save, help: "Save a named copy of this game") { save() }
                     .buttonStyle(.borderedProminent)
                     .keyboardShortcut(.defaultAction)
                     .disabled(full || nameIsBlank)
@@ -154,8 +158,11 @@ struct SaveGameSheet: View {
         .alert(replacing.map { SaveText.replacePrompt($0.name) } ?? "",
                isPresented: Binding(get: { replacing != nil }, set: { if !$0 { replacing = nil } }),
                presenting: replacing) { target in
-            Button(SaveText.replace, role: .destructive) { save(replacing: target.id) }
-            Button(SaveText.cancel, role: .cancel) {}
+            Button(SaveText.replace, role: .destructive) {
+                InteractionSound.activate.play()
+                save(replacing: target.id)
+            }
+            Button(SaveText.cancel, role: .cancel) { InteractionSound.activate.play() }
         } message: { _ in
             Text(SaveText.replaceWarning)
         }
@@ -210,7 +217,8 @@ struct LoadGameSheet: View {
             }
             HStack {
                 Spacer()
-                Button(SaveText.cancel) { dismiss() }.keyboardShortcut(.cancelAction)
+                GameButton(SaveText.cancel, help: "Close without loading a game") { dismiss() }
+                    .keyboardShortcut(.cancelAction)
             }
         }
         .padding(20)
@@ -219,8 +227,11 @@ struct LoadGameSheet: View {
         .alert(loading.map { SaveText.loadPrompt($0.name) } ?? "",
                isPresented: Binding(get: { loading != nil }, set: { if !$0 { loading = nil } }),
                presenting: loading) { save in
-            Button(SaveText.load) { load(save) }
-            Button(SaveText.cancel, role: .cancel) {}
+            Button(SaveText.load) {
+                InteractionSound.activate.play()
+                load(save)
+            }
+            Button(SaveText.cancel, role: .cancel) { InteractionSound.activate.play() }
         } message: { _ in
             Text(SaveText.loadWarning)
         }

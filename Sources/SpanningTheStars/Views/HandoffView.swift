@@ -39,7 +39,7 @@ struct HandoffView: View {
                     }
                     RecentEvents(lines: lines, resumed: resumed)
                         .frame(maxWidth: 520)
-                    Button("Reveal my hand", action: reveal)
+                    GameButton("Reveal my hand", help: "Show your private cards and begin your turn", action: reveal)
                         .buttonStyle(TitleButtonStyle(prominent: true))
                         .focusable(false)
                         .accessibilityLabel("Reveal my hand")

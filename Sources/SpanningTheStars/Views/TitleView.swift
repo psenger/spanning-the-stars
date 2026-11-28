@@ -36,14 +36,14 @@ struct TitleView: View {
                     .fixedSize(horizontal: false, vertical: true)
                 HStack(spacing: 14) {
                     if canContinue {
-                        Button("Continue Charter", action: onContinue)
+                        GameButton("Continue Charter", help: "Resume the autosaved game", action: onContinue)
                             .buttonStyle(TitleButtonStyle(prominent: true))
                             .accessibilityLabel("Continue Charter")
                     }
-                    Button("New Charter", action: onNewCharter)
+                    GameButton("New Charter", help: "Set up a new game", action: onNewCharter)
                         .buttonStyle(TitleButtonStyle(prominent: !canContinue))
                         .accessibilityLabel("New Charter")
-                    Button {
+                    GameButton(help: "Open the in-game rules and card guide") {
                         showCodex = true
                     } label: {
                         Label("Codex", systemImage: "book.closed.fill")

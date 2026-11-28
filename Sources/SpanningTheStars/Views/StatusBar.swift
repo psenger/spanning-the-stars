@@ -15,11 +15,10 @@ struct StatusBar: View {
                 FinalRoundBanner(turnsRemaining: remaining)
             }
             Spacer(minLength: 0)
-            Button(action: onCodex) {
+            GameButton(help: "Open the in-game rules and card guide", action: onCodex) {
                 Label("Codex", systemImage: "book.closed.fill")
             }
             .buttonStyle(BrassButtonStyle(prominent: false))
-            .help("Read the rules of the Charter")
             .accessibilityLabel("Codex")
         }
     }
@@ -51,11 +50,10 @@ struct HouseChip: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
                 HStack(spacing: 7) {
-                    Stat(symbol: "star.fill", value: player.score, help: "Concord Standing")
-                    Stat(symbol: "dot.radiowaves.up.forward", value: player.beacons, help: "Anchor Beacons left")
-                    Stat(symbol: "rectangle.portrait.on.rectangle.portrait.fill", value: player.hand.total,
-                         help: "Resource Cards in hand")
-                    Stat(symbol: "scroll.fill", value: player.contracts.count, help: "Concord Contracts held")
+                    Stat(stat: .standing, value: player.score)
+                    Stat(stat: .beacons, value: player.beacons)
+                    Stat(stat: .resources, value: player.hand.total)
+                    Stat(stat: .contracts, value: player.contracts.count)
                 }
             }
             Spacer(minLength: 0)
@@ -81,13 +79,12 @@ struct HouseChip: View {
 }
 
 private struct Stat: View {
-    let symbol: String
+    let stat: HelpHouseStat
     let value: Int
-    let help: String
 
     var body: some View {
         HStack(spacing: 2) {
-            Image(systemName: symbol)
+            Image(systemName: stat.symbol)
                 .font(.system(size: 9, weight: .semibold))
                 .foregroundStyle(Palette.brass)
             Text("\(value)")
@@ -96,9 +93,9 @@ private struct Stat: View {
                 .foregroundStyle(Palette.text)
         }
         .fixedSize()
-        .help(help)
+        .help("\(stat.title). \(stat.detail)")
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(help): \(value)")
+        .accessibilityLabel("\(stat.title): \(value)")
     }
 }
 
