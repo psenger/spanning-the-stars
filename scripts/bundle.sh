@@ -17,6 +17,14 @@ done
 cp build/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 cp LICENSE "$APP/Contents/Resources/LICENSE"
 
+GAME_SOURCE="Sources/SpanningTheStars"
+HELP_BOOK="$APP/Contents/Resources/SpanningTheStars.help"
+swiftc scripts/build-help.swift "$GAME_SOURCE/Theme/HelpReference.swift" \
+    "$GAME_SOURCE/Theme/CodexBlock.swift" -o build/build-help
+build/build-help "$GAME_SOURCE/Resources" "$HELP_BOOK"
+HELP_ENGLISH="$HELP_BOOK/Contents/Resources/en.lproj"
+hiutil -I lsm -Caf "$HELP_ENGLISH/SpanningTheStars.helpindex" "$HELP_ENGLISH"
+
 cat > "$APP/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -27,6 +35,9 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
     <key>CFBundleIdentifier</key><string>local.spanningthestars</string>
     <key>CFBundleExecutable</key><string>SpanningTheStars</string>
     <key>CFBundleIconFile</key><string>AppIcon</string>
+    <key>CFBundleDevelopmentRegion</key><string>en</string>
+    <key>CFBundleHelpBookFolder</key><string>SpanningTheStars.help</string>
+    <key>CFBundleHelpBookName</key><string>local.spanningthestars.help</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>1.0.0</string>
     <key>CFBundleVersion</key><string>1</string>

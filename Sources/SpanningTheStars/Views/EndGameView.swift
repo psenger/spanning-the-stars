@@ -1,3 +1,4 @@
+import Accessibility
 import SwiftUI
 import StarsCore
 
@@ -97,15 +98,15 @@ struct EndGameView: View {
             .frame(maxHeight: .infinity)
             HStack(spacing: 12) {
                 if step < 4 {
-                    Button("Show all") { finish() }
+                    GameButton("Show all", help: "Reveal the winner and every score now") { finish() }
                         .buttonStyle(BrassButtonStyle(prominent: false))
                         .accessibilityLabel("Show all")
                 }
                 Spacer()
-                Button("Title screen", action: onTitle)
+                GameButton("Title screen", help: "Return to the title screen", action: onTitle)
                     .buttonStyle(BrassButtonStyle(prominent: false))
                     .accessibilityLabel("Title screen")
-                Button("New Charter", action: onNewCharter)
+                GameButton("New Charter", help: "Set up another game", action: onNewCharter)
                     .buttonStyle(BrassButtonStyle())
                     .accessibilityLabel("New Charter")
             }
@@ -113,6 +114,11 @@ struct EndGameView: View {
         .padding(GameLayout.margin)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background { SpaceBackground().ignoresSafeArea() }
+        .overlay {
+            if step >= 4 && !reduceMotion && !review.winners.isEmpty {
+                VictoryConfetti(colors: review.winners.map { Palette.houseRim(state.players[$0].house) })
+            }
+        }
         .task { await play() }
     }
 
@@ -124,6 +130,15 @@ struct EndGameView: View {
                 .font(.system(size: 30, weight: .semibold, design: .serif))
                 .foregroundStyle(step >= 4 ? Palette.brass : Palette.text)
                 .contentTransition(.opacity)
+                .accessibilityAddTraits(.isHeader)
+            if step >= 4 && !review.winners.isEmpty {
+                let names = review.winners.map { state.players[$0].house.displayName }
+                let congratulations = "Congratulations to \(ListFormatter.localizedString(byJoining: names))!"
+                Text(congratulations)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(Palette.text)
+                    .onAppear { AccessibilityNotification.Announcement(congratulations).post() }
+            }
             Text(step >= 4 ? verdict.reason : "The Charter Era has closed. The Concord tallies every House.")
                 .font(.system(size: 14))
                 .foregroundStyle(Palette.dimText)

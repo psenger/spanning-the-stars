@@ -151,8 +151,11 @@ struct RootView: View {
         .preferredColorScheme(.dark)
         .alert("Abandon the current charter?",
                isPresented: Binding(get: { model.confirmingNewCharter }, set: { model.confirmingNewCharter = $0 })) {
-            Button("Abandon", role: .destructive) { model.openSetup() }
-            Button("Cancel", role: .cancel) {}
+            Button("Abandon", role: .destructive) {
+                InteractionSound.activate.play()
+                model.openSetup()
+            }
+            Button("Cancel", role: .cancel) { InteractionSound.activate.play() }
         } message: {
             Text("Beginning a new Charter replaces it. Named saves are kept.")
         }
@@ -191,13 +194,22 @@ private struct GameCommands: Commands {
 
     var body: some Commands {
         CommandGroup(replacing: .newItem) {
-            Button("New Charter") { model.requestNewCharter() }
+            Button("New Charter") {
+                InteractionSound.activate.play()
+                model.requestNewCharter()
+            }
                 .keyboardShortcut("n")
-            Button("Load Game\u{2026}") { model.sheet = .load }
+            Button("Load Game\u{2026}") {
+                InteractionSound.activate.play()
+                model.sheet = .load
+            }
                 .keyboardShortcut("o")
         }
         CommandGroup(replacing: .saveItem) {
-            Button("Save Game\u{2026}") { model.sheet = .save }
+            Button("Save Game\u{2026}") {
+                InteractionSound.activate.play()
+                model.sheet = .save
+            }
                 .keyboardShortcut("s")
                 .disabled(!model.canSave)
         }

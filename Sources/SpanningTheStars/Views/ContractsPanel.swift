@@ -6,6 +6,7 @@ struct ContractsPanel: View {
     let player: PlayerState
     let map: GalaxyMap
     var hidden = false
+    @Binding var hoveredContract: Int?
 
     var body: some View {
         let rows = ContractsPanel.rows(player, map: map)
@@ -21,7 +22,15 @@ struct ContractsPanel: View {
                 ScrollView(.vertical) {
                     LazyVStack(spacing: 4) {
                         ForEach(rows, id: \.contract.id) { row in
-                            ContractRow(row: row, map: map)
+                            let id = row.contract.id
+                        ContractRow(row: row, map: map)
+                            .onHover { inside in
+                                if inside { hoveredContract = id }
+                                else if hoveredContract == id { hoveredContract = nil }
+                            }
+                            .onDisappear {
+                                if hoveredContract == id { hoveredContract = nil }
+                            }
                         }
                     }
                     .padding(.trailing, 8)
@@ -87,7 +96,9 @@ private struct ContractRow: View {
         .padding(.horizontal, 8).padding(.vertical, 4)
         .background(row.complete ? Palette.hex(0x4CC36B, opacity: 0.08) : Color.white.opacity(0.035),
                     in: RoundedRectangle(cornerRadius: 6))
-        .help(c.flavor)
+        .contentShape(Rectangle())
+        .help("Connect \(map.system(c.a).name) to \(map.system(c.b).name) with your own lanes. "
+              + "Gain \(c.value) Standing if fulfilled or lose \(c.value) if unfulfilled.")
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(map.system(c.a).name) to \(map.system(c.b).name), \(c.value) points, "
                             + (row.complete ? "fulfilled" : "not yet fulfilled"))

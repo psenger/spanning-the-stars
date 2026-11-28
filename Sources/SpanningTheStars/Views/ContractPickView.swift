@@ -10,6 +10,7 @@ struct ContractPickView: View {
     let offered: [Int]
     let minimum: Int
     let perform: (Action) -> Void
+    var heldHighlight: Set<String> = []
 
     @State private var selected: Set<Int> = []
     @State private var hovered: Int?
@@ -26,7 +27,7 @@ struct ContractPickView: View {
     private var marked: Set<String> {
         var ids = selected
         if let hovered { ids.insert(hovered) }
-        return Set(ids.flatMap { [map.contracts[$0].a, map.contracts[$0].b] })
+        return heldHighlight.union(ids.flatMap { [map.contracts[$0].a, map.contracts[$0].b] })
     }
 
     var body: some View {
@@ -69,7 +70,9 @@ struct ContractPickView: View {
                 .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             }
             HStack {
-                Button(selected.count == offered.count ? "Clear" : "Choose all") {
+                GameButton(selected.count == offered.count ? "Clear" : "Choose all",
+                           help: selected.count == offered.count ? "Clear your contract choices" : "Choose every offered contract",
+                           sound: .selection) {
                     selected = selected.count == offered.count ? [] : Set(offered)
                 }
                 .buttonStyle(BrassButtonStyle(prominent: false))
@@ -78,7 +81,7 @@ struct ContractPickView: View {
                 let confirm = selected.count < minimum
                     ? "Choose at least \(minimum)"
                     : "Accept \(selected.count) Contract\(selected.count == 1 ? "" : "s")"
-                Button(confirm) {
+                GameButton(confirm, help: "Keep the chosen contracts and return the rest to the deck") {
                     perform(.keepContracts(offered.filter(selected.contains)))
                 }
                 .buttonStyle(BrassButtonStyle())
@@ -104,7 +107,8 @@ private struct OfferedCard: View {
     let hover: (Bool) -> Void
 
     var body: some View {
-        Button(action: toggle) {
+        GameButton(help: (selected ? "Remove this contract from your choices. " : "Choose this contract to keep. ")
+                   + contract.flavor, sound: .selection, action: toggle) {
             ContractCardView(contract: contract, completed: nil, size: size, map: map)
                 .opacity(selected ? 1 : 0.78)
                 .overlay {
@@ -125,7 +129,6 @@ private struct OfferedCard: View {
         }
         .buttonStyle(.plain)
         .onHover(perform: hover)
-        .help(contract.flavor)
         .accessibilityLabel("\(map.system(contract.a).name) to \(map.system(contract.b).name), \(contract.value) points")
         .accessibilityValue(selected ? "Chosen" : "Not chosen")
     }

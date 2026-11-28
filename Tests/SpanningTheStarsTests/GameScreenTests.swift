@@ -43,6 +43,22 @@ import Testing
         #expect(!session.state.config.frontierHazards)
     }
 
+    @Test func heldContractHighlightsOnlyTheVisibleHousesContractEndpoints() {
+        let map = engine.map
+        var state = playing()
+        state.players[0].contracts = [0, 1]
+        state.players[1].contracts = [2]
+        let player = state.players[0]
+
+        for id in player.contracts {
+            let contract = map.contracts[id]
+            #expect(GameView.heldContractSystems(id, player: player, map: map, visible: true) == [contract.a, contract.b])
+        }
+        #expect(GameView.heldContractSystems(0, player: player, map: map, visible: false).isEmpty)
+        #expect(GameView.heldContractSystems(2, player: player, map: map, visible: true).isEmpty)
+        #expect(GameView.heldContractSystems(nil, player: player, map: map, visible: true).isEmpty)
+    }
+
     // MARK: Turn options
 
     @Test func secondPickExcludesFaceUpCoreAndClaims() {

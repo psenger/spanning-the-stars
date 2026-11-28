@@ -70,6 +70,9 @@ private struct CardStack: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(count) \(card.displayName)")
+        .help("\(count) in hand. " + (card == .core
+              ? "Quantum Cores substitute for any resource color."
+              : "Use \(card.displayName) to pay for matching or open-space lanes."))
     }
 }
 

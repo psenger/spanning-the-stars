@@ -4,6 +4,10 @@ This file records notable changes to Spanning the Stars. It follows [Keep a Chan
 
 ## [Unreleased]
 
+### Added
+
+- Victory celebrations, held-contract map highlights, tooltips, audio cues, and illustrated in-game and macOS Help. ([#1](https://github.com/psenger/spanning-the-stars/issues/1))
+
 ## [1.0.0] - 2026-11-26
 
 ### Added
